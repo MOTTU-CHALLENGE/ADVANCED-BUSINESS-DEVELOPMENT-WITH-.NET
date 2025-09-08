@@ -1,0 +1,33 @@
+﻿@model Patio
+
+@{
+    ViewData["Title"] = "Cadastrar Patio";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="IdFilial"></label>
+        <input asp-for="IdFilial" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NomePatio"></label>
+        <input asp-for="NomePatio" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CapacidadeMax"></label>
+        <input asp-for="CapacidadeMax" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Area"></label>
+        <input asp-for="Area" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao"></label>
+        <input asp-for="Descricao" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

@@ -1,0 +1,45 @@
+﻿@model Filial
+
+@{
+    ViewData["Title"] = "Cadastrar Filial";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="NomeFilial"></label>
+        <input asp-for="NomeFilial" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco"></label>
+        <input asp-for="Endereco" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cidade"></label>
+        <input asp-for="Cidade" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Estado"></label>
+        <input asp-for="Estado" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Pais"></label>
+        <input asp-for="Pais" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cep"></label>
+        <input asp-for="Cep" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefone"></label>
+        <input asp-for="Telefone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataInauguracao"></label>
+        <input asp-for="DataInauguracao" class="form-control" type="date" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

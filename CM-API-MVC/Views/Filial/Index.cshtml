@@ -1,0 +1,41 @@
+﻿@model List<Filial>
+
+<h2>Lista de Filiais</h2>
+
+    <table class="table" align="center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Pais</th>
+                <th>Detalhe</th>
+                <th>Atualizar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var f in Model)
+            {
+            <tr>
+                <td>@f.IdFilial</td>
+                <td>@f.NomeFilial</td>
+                <td>@f.Cidade</td>
+                <td>@f.Estado</td>
+                <td>@f.Pais</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@f.IdFilial" class="btn btn-info btn-sm">Ver</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@f.IdFilial" class="btn btn-warning btn-sm">Editar</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@f.IdFilial" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+</table>
+
+<a class="btn btn-primary m-2" asp-controller="Filial" asp-action="Create">Nova Filial</a>

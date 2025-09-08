@@ -1,0 +1,40 @@
+﻿@model Filial
+
+@{
+    ViewData["Title"] = "Detalhes da Filial";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.IdFilial</dd>
+
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.NomeFilial</dd>
+
+        <dt class="col-sm-2">Endereço</dt>
+        <dd class="col-sm-10">@Model.Endereco</dd>
+
+        <dt class="col-sm-2">Cidade</dt>
+        <dd class="col-sm-10">@Model.Cidade</dd>
+
+        <dt class="col-sm-2">Estado</dt>
+        <dd class="col-sm-10">@Model.Estado</dd>
+
+        <dt class="col-sm-2">País</dt>
+        <dd class="col-sm-10">@Model.Pais</dd>
+
+        <dt class="col-sm-2">CEP</dt>
+        <dd class="col-sm-10">@Model.Cep</dd>
+
+        <dt class="col-sm-2">Telefone</dt>
+        <dd class="col-sm-10">@Model.Telefone</dd>
+
+        <dt class="col-sm-2">Inauguração</dt>
+        <dd class="col-sm-10">@Model.DataInauguracao?.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

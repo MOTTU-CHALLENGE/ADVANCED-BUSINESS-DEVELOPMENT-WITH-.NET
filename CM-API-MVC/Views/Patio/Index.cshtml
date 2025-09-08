@@ -1,0 +1,40 @@
+﻿@model List<Patio>
+
+
+<h2>Lista de Patios</h2>
+
+<table class="table" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Filial</th>
+            <th>Nome</th>
+            <th>Capacidade</th>
+            <th>Detalhe</th>
+            <th>Atualizar</th>
+            <th>Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.IdPatio</td>
+                <td>@p.IdFilial</td>
+                <td>@p.NomePatio</td>
+                <td>@p.CapacidadeMax</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@p.IdPatio" class="btn btn-info btn-sm">Ver</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.IdPatio" class="btn btn-warning btn-sm">Editar</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@p.IdPatio" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary m-2" asp-controller="Patio" asp-action="Create">Novo Patio</a>

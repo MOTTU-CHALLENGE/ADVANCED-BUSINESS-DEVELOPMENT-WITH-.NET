@@ -1,0 +1,28 @@
+﻿@model Filial
+
+@{
+    ViewData["Title"] = "Confirmar Exclusão";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-danger">
+    <strong>Tem certeza que deseja excluir esta filial?</strong>
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Nome</dt>
+    <dd class="col-sm-10">@Model.NomeFilial</dd>
+
+    <dt class="col-sm-2">Endereço</dt>
+    <dd class="col-sm-10">@Model.Endereco</dd>
+
+    <dt class="col-sm-2">Cidade</dt>
+    <dd class="col-sm-10">@Model.Cidade</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdFilial" />
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
