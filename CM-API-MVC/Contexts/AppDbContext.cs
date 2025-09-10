@@ -22,37 +22,43 @@ namespace CM_API_MVC.Contexts
             modelBuilder.Entity<Patio>()
                 .HasOne(p => p.Filial)
                 .WithMany(f => f.Patios)
-                .HasForeignKey(p => p.IdFilial);
+                .HasForeignKey(p => p.IdFilial)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Relacionamento 1:N -> Patio : Posicoes
             modelBuilder.Entity<PosicaoMoto>()
                 .HasOne(pm => pm.Patio)
                 .WithMany(p => p.PosicaoMoto)
-                .HasForeignKey(pm => pm.IdPatio);
+                .HasForeignKey(pm => pm.IdPatio)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Relacionamento 1:N -> Dispositivo : Posicoes
             modelBuilder.Entity<PosicaoMoto>()
                 .HasOne(pm => pm.DispositivoIot)
                 .WithMany(d => d.Posicoes)
-                .HasForeignKey(pm => pm.IdDispositivo);
+                .HasForeignKey(pm => pm.IdDispositivo)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Relacionamento 1:N -> Patio : ReceptorWifi
             modelBuilder.Entity<ReceptorWifi>()
                 .HasOne(r => r.Patio)
                 .WithMany(p => p.ReceptorWifi)
-                .HasForeignKey(r => r.IdPatio);
+                .HasForeignKey(r => r.IdPatio)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Relacionamento 1:1 -> DispositivoIot : Moto
             modelBuilder.Entity<DispositivoIot>()
                 .HasOne<Moto>()
                 .WithOne()
-                .HasForeignKey<DispositivoIot>(d => d.IdMoto);
+                .HasForeignKey<DispositivoIot>(d => d.IdMoto)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Relacionamento 1:1 -> RFID : Moto
             modelBuilder.Entity<Moto>()
                 .HasOne(m => m.Rfid)
                 .WithOne()
-                .HasForeignKey<Moto>(m => m.CodTag);
+                .HasForeignKey<Moto>(m => m.CodTag)
+                .OnDelete(DeleteBehavior.Cascade);
 
 
 

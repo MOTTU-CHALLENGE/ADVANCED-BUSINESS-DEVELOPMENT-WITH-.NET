@@ -1,7 +1,6 @@
-﻿using CM_API_MVC.Contexts;
-using CM_API_MVC.Models;
+﻿using CM_API_MVC.Models;
+using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CM_API_MVC.Controllers.Api
 {
@@ -9,49 +8,37 @@ namespace CM_API_MVC.Controllers.Api
     [Route("api/[controller]")]
     public class PatioApiController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly PatioRepository _repository;
 
-        public PatioApiController(AppDbContext context)
+        public PatioApiController(PatioRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patio>>> GetAll()
         {
-            return Ok(await _context.Patios.ToListAsync());
+            return Ok(await _repository.GetAllAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Patio>> GetById(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
                 return NotFound();
 
             return Ok(patio);
         }
 
-        private async Task<int> GetNextPatioIdAsync()
-        {
-            var connectionString = _context.Database.GetDbConnection().ConnectionString;
-
-            using var connection = new OracleConnection(connectionString);
-            await connection.OpenAsync();
-
-            using var command = connection.CreateCommand();
-            command.CommandText = "SELECT PATIO_SEQ.NEXTVAL FROM DUAL";
-
-            var result = await command.ExecuteScalarAsync();
-            return Convert.ToInt32(result);
-        }
-
         [HttpPost]
         public async Task<ActionResult<Patio>> Create(Patio patio)
         {
-            patio.IdPatio = await GetNextPatioIdAsync();
-            await _context.Patios.AddAsync(patio);
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            await _repository.AddAsync(patio);
+
             return CreatedAtAction(nameof(GetById), new { id = patio.IdPatio }, patio);
         }
 
@@ -61,20 +48,22 @@ namespace CM_API_MVC.Controllers.Api
             if (id != patio.IdPatio)
                 return BadRequest();
 
-            _context.Entry(patio).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            var patioExist = await _repository.GetByIdAsync(id);
+            if (patioExist == null)
+                return NotFound();
+
+            await _repository.UpdateAsync(patio);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
                 return NotFound();
 
-            _context.Patios.Remove(patio);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteAsync(patio);
             return NoContent();
         }
     }

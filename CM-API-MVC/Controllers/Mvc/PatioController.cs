@@ -1,100 +1,96 @@
-﻿using CM_API_MVC.Contexts;
-using CM_API_MVC.Models;
+﻿using CM_API_MVC.Models;
+using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CM_API_MVC.Controllers.Mvc
 {
-    public class PatioController(AppDbContext context) : Controller
+    public class PatioController : Controller
     {
-        private readonly AppDbContext _context = context;
+        private readonly PatioRepository _repository;
 
+        public PatioController(PatioRepository repository)
+        {
+            _repository = repository;
+        }
+
+        // GET: /Patio
         public async Task<IActionResult> Index()
         {
-            var patios = await _context.Patios.OrderBy(p => p.IdPatio).ToListAsync();
-            return View(patios);
+            var patios = await _repository.GetAllAsync();
+            return View(patios.OrderBy(p => p.IdPatio).ToList());
         }
 
-        private async Task<int> GetNextPatioIdAsync()
-        {
-            var connectionString = _context.Database.GetDbConnection().ConnectionString;
-
-            using var connection = new OracleConnection(connectionString);
-            await connection.OpenAsync();
-
-            using var command = connection.CreateCommand();
-            command.CommandText = "SELECT PATIO_SEQ.NEXTVAL FROM DUAL";
-
-            var result = await command.ExecuteScalarAsync();
-            return Convert.ToInt32(result);
-        }
-
+        // GET: /Patio/Create
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        // POST: /Patio/Create
         [HttpPost]
         public async Task<IActionResult> Create(Patio patio)
         {
-            patio.IdPatio = await GetNextPatioIdAsync();
-            _context.Add(patio);
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+                return View(patio);
+
+            await _repository.AddAsync(patio);
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: /Patio/Details/5
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var patio = await _context.Patios.FirstOrDefaultAsync(p => p.IdPatio == id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
-            {
                 return NotFound();
-            }
+
             return View(patio);
         }
 
+        // GET: /Patio/Edit/5
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
                 return NotFound();
 
             return View(patio);
         }
 
+        // POST: /Patio/Edit
         [HttpPost]
         public async Task<IActionResult> Edit(Patio patio)
         {
             if (!ModelState.IsValid)
                 return View(patio);
 
-            _context.Update(patio);
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(patio);
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: /Patio/Delete
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
                 return NotFound();
 
             return View(patio);
         }
 
+        // POST: /Patio/Delete
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var patio = await _repository.GetByIdAsync(id);
             if (patio == null)
                 return NotFound();
 
-            _context.Patios.Remove(patio);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteAsync(patio);
             return RedirectToAction(nameof(Index));
         }
     }

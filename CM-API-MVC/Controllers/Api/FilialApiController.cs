@@ -1,7 +1,6 @@
-﻿using CM_API_MVC.Contexts;
-using CM_API_MVC.Models;
+﻿using CM_API_MVC.Models;
+using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CM_API_MVC.Controllers.Api
 {
@@ -10,37 +9,24 @@ namespace CM_API_MVC.Controllers.Api
     public class FilialApiController : Controller
     {
 
-        private readonly AppDbContext _context;
+        private readonly FilialRepository _repository;
 
-        public FilialApiController(AppDbContext context)
+        public FilialApiController(FilialRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Filial>>> GetAll()
         {
-            return Ok(await _context.Filiais.ToListAsync());
+            return Ok(await _repository.GetAllAsync());
         }
 
-        private async Task<int> GetNextFilialIdAsync()
-        {
-            var connectionString = _context.Database.GetDbConnection().ConnectionString;
-
-            using var connection = new OracleConnection(connectionString);
-            await connection.OpenAsync();
-
-            using var command = connection.CreateCommand();
-            command.CommandText = "SELECT FILIAL_SEQ.NEXTVAL FROM DUAL";
-
-            var result = await command.ExecuteScalarAsync();
-            return Convert.ToInt32(result);
-        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Filial>> GetById(int id)
         {
-            var filial = await _context.Filiais.FindAsync(id);
+            var filial = await _repository.GetByIdAsync(id);
             if (filial == null)
                 return NotFound();
 
@@ -50,11 +36,10 @@ namespace CM_API_MVC.Controllers.Api
         [HttpPost]
         public async Task<ActionResult<Filial>> Create(Filial filial)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            filial.IdFilial = await GetNextFilialIdAsync();
-
-            await _context.Filiais.AddAsync(filial);
-            await _context.SaveChangesAsync();
+            await _repository.AddAsync(filial);
             return CreatedAtAction(nameof(GetById), new { id = filial.IdFilial }, filial);
         }
 
@@ -64,20 +49,22 @@ namespace CM_API_MVC.Controllers.Api
             if (id != filial.IdFilial)
                 return BadRequest();
 
-            _context.Entry(filial).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            var filialExist = await _repository.GetByIdAsync(id);
+            if (filialExist == null)
+                return NotFound();
+
+            await _repository.UpdateAsync(filial);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var filial = await _context.Filiais.FindAsync(id);
+            var filial = await _repository.GetByIdAsync(id);
             if (filial == null)
                 return NotFound();
 
-            _context.Filiais.Remove(filial);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteAsync(filial);
             return NoContent();
         }
     }
