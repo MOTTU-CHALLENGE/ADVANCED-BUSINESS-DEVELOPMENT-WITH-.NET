@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Filial"
+                    "$ref": "#/components/schemas/FilialComPatiosDto"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Filial"
+                    "$ref": "#/components/schemas/FilialComPatiosDto"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Filial"
+                    "$ref": "#/components/schemas/FilialComPatiosDto"
                   }
                 }
               }
@@ -484,6 +484,56 @@
         },
         "additionalProperties": false
       },
+      "FilialComPatiosDto": {
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "patios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatioDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Moto": {
         "required": [
           "dataCadastro",
@@ -586,6 +636,20 @@
             "items": {
               "$ref": "#/components/schemas/PosicaoMoto"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatioDto": {
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
             "nullable": true
           }
         },

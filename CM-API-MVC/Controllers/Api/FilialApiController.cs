@@ -1,4 +1,5 @@
-﻿using CM_API_MVC.Models;
+﻿using CM_API_MVC.Dtos;
+using CM_API_MVC.Models;
 using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +18,9 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Filial>>> GetAll()
+        public async Task<ActionResult<IEnumerable<FilialComPatiosDto>>> GetAll()
         {
-            return Ok(await _repository.GetAllAsync());
+            return Ok(await _repository.GetAllFiliaisComPatios());
         }
 
 

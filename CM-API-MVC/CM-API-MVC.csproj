@@ -22,7 +22,6 @@
 	<ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Contexts\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
