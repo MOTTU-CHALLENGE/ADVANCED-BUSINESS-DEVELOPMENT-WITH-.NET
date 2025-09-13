@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\repositories\\filialrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:repositories\\filialrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\controllers\\api\\patioapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:controllers\\api\\patioapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\filialcompatiosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\filialcompatiosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\repositories\\patiorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:repositories\\patiorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\controllers\\api\\filialapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:controllers\\api\\filialapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\patiocomwifidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\patiocomwifidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\models\\filial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:models\\filial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\models\\patio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:models\\patio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\patiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\patiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\novopatiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\novopatiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\wifidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\wifidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\dtos\\nomepatiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:dtos\\nomepatiodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +50,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Filial.cs",
-              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Models\\Filial.cs",
-              "RelativeDocumentMoniker": "Models\\Filial.cs",
-              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Models\\Filial.cs",
-              "RelativeToolTip": "Models\\Filial.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PatioApiController.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\PatioApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Api\\PatioApiController.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\PatioApiController.cs",
+              "RelativeToolTip": "Controllers\\Api\\PatioApiController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:29:27.96Z",
+              "WhenOpened": "2025-09-13T04:04:00.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Patio.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Models\\Patio.cs",
+              "RelativeDocumentMoniker": "Models\\Patio.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Models\\Patio.cs",
+              "RelativeToolTip": "Models\\Patio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T04:02:57.406Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FilialApiController.cs",
-              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\FilialApiController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Api\\FilialApiController.cs",
-              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\FilialApiController.cs",
-              "RelativeToolTip": "Controllers\\Api\\FilialApiController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAgwBgAAAAAAAAAAAAAAA==",
+              "Title": "PatioComWifiDto.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\PatioComWifiDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\PatioComWifiDto.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\PatioComWifiDto.cs",
+              "RelativeToolTip": "Dtos\\PatioComWifiDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:24:03.073Z",
+              "WhenOpened": "2025-09-13T03:21:09.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FilialRepository.cs",
-              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\FilialRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\FilialRepository.cs",
-              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\FilialRepository.cs",
-              "RelativeToolTip": "Repositories\\FilialRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "WifiDto.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\WifiDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\WifiDto.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\WifiDto.cs",
+              "RelativeToolTip": "Dtos\\WifiDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:22:57.154Z",
+              "WhenOpened": "2025-09-13T03:16:53.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\PatioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\PatioRepository.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\PatioRepository.cs",
+              "RelativeToolTip": "Repositories\\PatioRepository.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwGsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T03:03:03.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NovoPatioDto.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\NovoPatioDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\NovoPatioDto.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\NovoPatioDto.cs",
+              "RelativeToolTip": "Dtos\\NovoPatioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T03:02:14.512Z",
               "EditorCaption": ""
             },
             {
@@ -83,22 +134,22 @@
               "RelativeDocumentMoniker": "Dtos\\PatioDto.cs",
               "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\PatioDto.cs",
               "RelativeToolTip": "Dtos\\PatioDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T01:25:35.137Z",
+              "WhenOpened": "2025-09-13T03:01:48.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FilialComPatiosDto.cs",
-              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\FilialComPatiosDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\FilialComPatiosDto.cs",
-              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\FilialComPatiosDto.cs",
-              "RelativeToolTip": "Dtos\\FilialComPatiosDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "NomePatioDto.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\NomePatioDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\NomePatioDto.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Dtos\\NomePatioDto.cs",
+              "RelativeToolTip": "Dtos\\NomePatioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T01:25:01.638Z",
+              "WhenOpened": "2025-09-13T02:57:57.853Z",
               "EditorCaption": ""
             }
           ]

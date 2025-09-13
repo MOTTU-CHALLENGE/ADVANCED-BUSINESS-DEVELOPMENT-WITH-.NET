@@ -18,7 +18,7 @@ namespace CM_API_MVC.Models
         [Column("NM_PATIO")]
         [Required]
         [MaxLength(100)]
-        public string NomePatio { get; set; }
+        public required string NomePatio { get; set; }
 
         [Column("NR_CAP_MAX")]
         public int? CapacidadeMax { get; set; }
@@ -30,7 +30,7 @@ namespace CM_API_MVC.Models
         public string? Descricao { get; set; }
 
         [ForeignKey("IdFilial")]
-        public Filial Filial { get; set; }
+        public Filial? Filial { get; set; }
 
         public ICollection<ReceptorWifi> ReceptorWifi { get; set; } = new List<ReceptorWifi>();
 

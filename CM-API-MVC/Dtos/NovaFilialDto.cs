@@ -1,8 +1,7 @@
 ﻿namespace CM_API_MVC.Dtos
 {
-    public class FilialComPatioDto
+    public class NovaFilialDto
     {
-        public int IdFilial { get; set; }
         public string NomeFilial { get; set; }
         public string Endereco { get; set; }
         public string Cidade { get; set; }
@@ -11,7 +10,5 @@
         public string? Cep { get; set; }
         public string? Telefone { get; set; }
         public DateTime? DataInauguracao { get; set; }
-        public ICollection<NomePatioDto> Patios { get; set; } = new List<NomePatioDto>();
     }
 }
- 

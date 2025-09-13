@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.FilialComPatiosDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.FilialComPatioDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,14 +28,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "filial",
-        "Type": "CM_API_MVC.Models.Filial",
+        "Name": "filialDto",
+        "Type": "CM_API_MVC.Dtos.NovaFilialDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Models.Filial",
+        "Type": "CM_API_MVC.Dtos.FilialDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Models.Filial",
+        "Type": "CM_API_MVC.Dtos.FilialComPatioDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -86,7 +86,7 @@
       },
       {
         "Name": "filial",
-        "Type": "CM_API_MVC.Models.Filial",
+        "Type": "CM_API_MVC.Dtos.FilialDto",
         "IsRequired": true
       }
     ],
@@ -118,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Models.Patio, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.PatioComWifiDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -137,14 +137,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "patio",
-        "Type": "CM_API_MVC.Models.Patio",
+        "Name": "patioDto",
+        "Type": "CM_API_MVC.Dtos.NovoPatioDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Models.Patio",
+        "Type": "CM_API_MVC.Dtos.PatioDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Models.Patio",
+        "Type": "CM_API_MVC.Dtos.PatioComWifiDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -195,7 +195,7 @@
       },
       {
         "Name": "patio",
-        "Type": "CM_API_MVC.Models.Patio",
+        "Type": "CM_API_MVC.Dtos.PatioDto",
         "IsRequired": true
       }
     ],

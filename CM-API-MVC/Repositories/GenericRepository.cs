@@ -15,30 +15,30 @@ namespace CM_API_MVC.Repositories
             _dbSet = context.Set<T>();
         }
 
-        public async Task<List<T>> GetAllAsync() => await _dbSet.ToListAsync();
+        public virtual async Task<List<T>> GetAll() => await _dbSet.ToListAsync();
 
 
-        public async Task<T?> GetByIdAsync(object id) => await _dbSet.FindAsync(id);
+        public virtual async Task<T?> GetByIdAsync(object id) => await _dbSet.FindAsync(id);
 
-        public async Task AddAsync(T entity)
+        public virtual async Task AddAsync(T entity)
         {
             _dbSet.Add(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(T entity)
+        public virtual async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(T entity)
+        public virtual async Task DeleteAsync(T entity)
         {
             _dbSet.Remove(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<T?> GetByIdWithIncludesAsync(object id, params Expression<Func<T, object>>[] includes)
+        public virtual async Task<T?> GetByIdWithIncludesAsync(object id, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _dbSet;
 

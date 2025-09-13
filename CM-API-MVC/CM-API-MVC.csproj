@@ -7,6 +7,10 @@
     <RootNamespace>CM_API_MVC</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Dtos\Class.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">

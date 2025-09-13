@@ -1,4 +1,5 @@
-﻿using CM_API_MVC.Models;
+﻿using CM_API_MVC.Dtos;
+using CM_API_MVC.Models;
 using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,15 +17,15 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Patio>>> GetAll()
+        public async Task<ActionResult<IEnumerable<PatioComWifiDto>>> GetAll()
         {
-            return Ok(await _repository.GetAllAsync());
+            return Ok(await _repository.GetAllAsyncDto());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Patio>> GetById(int id)
+        public async Task<ActionResult<PatioComWifiDto>> GetById(int id)
         {
-            var patio = await _repository.GetByIdAsync(id);
+            var patio = await _repository.GetByIdAsyncDto(id);
             if (patio == null)
                 return NotFound();
 
@@ -32,18 +33,28 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpPost]
-        public async Task<ActionResult<Patio>> Create(Patio patio)
+        public async Task<ActionResult<PatioDto>> Create(NovoPatioDto patioDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _repository.AddAsync(patio);
+            var patio = await _repository.AddAsyncDto(patioDto);
 
-            return CreatedAtAction(nameof(GetById), new { id = patio.IdPatio }, patio);
+            var retorno = new PatioDto
+            {
+                IdPatio = patio.IdPatio,
+                IdFilial = patio.IdFilial,
+                NomePatio = patio.NomePatio,
+                CapacidadeMax = patio.CapacidadeMax,
+                Area = patio.Area,
+                Descricao = patio.Descricao
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = retorno.IdPatio }, patioDto);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Patio patio)
+        public async Task<IActionResult> Update(int id, PatioDto patio)
         {
             if (id != patio.IdPatio)
                 return BadRequest();
@@ -52,7 +63,7 @@ namespace CM_API_MVC.Controllers.Api
             if (patioExist == null)
                 return NotFound();
 
-            await _repository.UpdateAsync(patio);
+            await _repository.UpdateAsyncDto(id, patio);
             return NoContent();
         }
 

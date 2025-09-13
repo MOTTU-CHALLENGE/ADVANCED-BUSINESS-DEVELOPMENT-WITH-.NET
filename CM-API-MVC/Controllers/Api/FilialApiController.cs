@@ -18,16 +18,16 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<FilialComPatiosDto>>> GetAll()
+        public async Task<ActionResult<IEnumerable<FilialComPatioDto>>> GetAll()
         {
-            return Ok(await _repository.GetAllFiliaisComPatios());
+            return Ok(await _repository.GetAllAsyncDto());
         }
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Filial>> GetById(int id)
+        public async Task<ActionResult<FilialComPatioDto>> GetById(int id)
         {
-            var filial = await _repository.GetByIdAsync(id);
+            var filial = await _repository.GetByIdAsyncDto(id);
             if (filial == null)
                 return NotFound();
 
@@ -35,26 +35,43 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpPost]
-        public async Task<ActionResult<Filial>> Create(Filial filial)
+        public async Task<ActionResult<FilialDto>> Create(NovaFilialDto filialDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _repository.AddAsync(filial);
-            return CreatedAtAction(nameof(GetById), new { id = filial.IdFilial }, filial);
+            // Inserir no banco
+            var novaFilial = await _repository.AddAsyncDto(filialDto);
+
+            // Retornar o DTO com ID e demais dados
+            var retorno = new FilialDto
+            {
+                IdFilial = novaFilial.IdFilial,
+                NomeFilial = novaFilial.NomeFilial,
+                Endereco = novaFilial.Endereco,
+                Cidade = novaFilial.Cidade,
+                Estado = novaFilial.Estado,
+                Pais = novaFilial.Pais,
+                Cep = novaFilial.Cep,
+                Telefone = novaFilial.Telefone,
+                DataInauguracao = novaFilial.DataInauguracao
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = retorno.IdFilial }, retorno);
         }
 
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Filial filial)
+        public async Task<IActionResult> Update(int id, FilialDto filial)
         {
             if (id != filial.IdFilial)
                 return BadRequest();
 
-            var filialExist = await _repository.GetByIdAsync(id);
+            var filialExist = await _repository.GetByIdAsyncDto(id);
             if (filialExist == null)
                 return NotFound();
 
-            await _repository.UpdateAsync(filial);
+            await _repository.UpdateAsyncDto(id, filial);
             return NoContent();
         }
 

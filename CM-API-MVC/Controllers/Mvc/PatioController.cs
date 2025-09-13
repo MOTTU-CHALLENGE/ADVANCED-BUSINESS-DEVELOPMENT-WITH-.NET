@@ -16,7 +16,7 @@ namespace CM_API_MVC.Controllers.Mvc
         // GET: /Patio
         public async Task<IActionResult> Index()
         {
-            var patios = await _repository.GetAllAsync();
+            var patios = await _repository.GetAll();
             return View(patios.OrderBy(p => p.IdPatio).ToList());
         }
 

@@ -1,8 +1,7 @@
 ﻿namespace CM_API_MVC.Dtos
 {
-    public class PatioDto
+    public class NovoPatioDto
     {
-        public int IdPatio { get; set; }
         public int IdFilial { get; set; }
         public required string NomePatio { get; set; }
         public int? CapacidadeMax { get; set; }

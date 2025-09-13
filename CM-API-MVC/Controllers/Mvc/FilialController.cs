@@ -16,7 +16,7 @@ namespace CM_API_MVC.Controllers.Mvc
         // GET: /Filial
         public async Task<IActionResult> Index()
         {
-            var filiais = await _repository.GetAllAsync();
+            var filiais = await _repository.GetAllAsyncDto();
             return View(filiais);
         }
 
