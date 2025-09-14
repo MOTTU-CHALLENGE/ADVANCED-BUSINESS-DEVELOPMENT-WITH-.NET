@@ -147,3 +147,9 @@ C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\Snappier.dll
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\ZstdSharp.dll
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\web.config
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\appsettings.Development.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\appsettings.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\CM-API-MVC.deps.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\CM-API-MVC.runtimeconfig.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\publicado\CM-API-MVC.staticwebassets.endpoints.json

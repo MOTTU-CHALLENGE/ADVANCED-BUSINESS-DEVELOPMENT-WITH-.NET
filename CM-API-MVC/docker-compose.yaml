@@ -6,7 +6,7 @@ services:
     container_name: mysql-dev
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mottuBD
+      MYSQL_DATABASE: mottuDB
       MYSQL_USER: mottuser
       MYSQL_PASSWORD: mottupass
     ports:
@@ -28,6 +28,23 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: adminpass
       MONGO_INITDB_DATABASE: mottuDB
+
+  api:
+    build: ./publicado
+    container_name: CM-API-MVC
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+      - mysql
+    volumes:
+      - ./publicado:/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   mysql_data:

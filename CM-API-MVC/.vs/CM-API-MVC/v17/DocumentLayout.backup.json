@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Repositories\\RegistroSinalRepository.cs",
               "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\RegistroSinalRepository.cs",
               "RelativeToolTip": "Repositories\\RegistroSinalRepository.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwD0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-14T20:29:32.279Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Dtos\\Registro\\RegistroDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T20:28:47.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T20:28:47.132Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T04:11:21.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T04:11:21.61Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Controllers\\Api\\RegistroSinalController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAADwvxYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T20:32:54.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T20:32:54.731Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "DesignTimeDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T04:17:57.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T04:17:57.236Z"
             }
           ]
         }
