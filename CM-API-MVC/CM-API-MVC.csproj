@@ -18,14 +18,16 @@
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+		<PackageReference Include="MongoDB.Driver" Version="3.5.0" />
 		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
 
 
 	<ItemGroup>
+    <Folder Include="Dtos\NovaPasta1\" />
+    <Folder Include="Dtos\NovaPasta\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Contexts\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

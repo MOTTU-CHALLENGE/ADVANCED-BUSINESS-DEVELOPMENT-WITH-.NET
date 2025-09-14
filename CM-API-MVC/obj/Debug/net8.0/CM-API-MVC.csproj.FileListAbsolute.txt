@@ -140,4 +140,10 @@ C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\DnsClient.dll
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\Snappier.dll
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Debug\net8.0\ZstdSharp.dll
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

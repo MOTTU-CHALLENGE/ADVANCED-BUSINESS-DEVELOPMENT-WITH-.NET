@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CM_API_MVC.Dtos
+﻿namespace CM_API_MVC.Dtos.Wifi
 {
     public class WifiDto
     {

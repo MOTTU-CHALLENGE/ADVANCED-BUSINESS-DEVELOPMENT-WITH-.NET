@@ -48,18 +48,18 @@ namespace CM_API_MVC.Contexts
 
             // Relacionamento 1:1 -> DispositivoIot : Moto
             modelBuilder.Entity<DispositivoIot>()
-                .HasOne<Moto>()
+                .HasOne(d => d.Moto)
                 .WithOne()
                 .HasForeignKey<DispositivoIot>(d => d.IdMoto)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
+
 
             // Relacionamento 1:1 -> RFID : Moto
             modelBuilder.Entity<Moto>()
                 .HasOne(m => m.Rfid)
                 .WithOne()
                 .HasForeignKey<Moto>(m => m.CodTag)
-                .OnDelete(DeleteBehavior.Cascade);
-
+                .OnDelete(DeleteBehavior.SetNull);
 
 
             base.OnModelCreating(modelBuilder);

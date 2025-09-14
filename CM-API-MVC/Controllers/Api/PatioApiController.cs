@@ -1,5 +1,4 @@
-﻿using CM_API_MVC.Dtos;
-using CM_API_MVC.Models;
+﻿using CM_API_MVC.Dtos.Patio;
 using CM_API_MVC.Repositories;
 using Microsoft.AspNetCore.Mvc;
 

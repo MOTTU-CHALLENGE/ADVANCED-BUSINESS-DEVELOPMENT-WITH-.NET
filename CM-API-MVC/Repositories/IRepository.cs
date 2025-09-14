@@ -10,6 +10,5 @@ namespace CM_API_MVC.Repositories
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
         Task<T?> GetByIdWithIncludesAsync(object id, params Expression<Func<T, object>>[] includes);
-
     }
 }

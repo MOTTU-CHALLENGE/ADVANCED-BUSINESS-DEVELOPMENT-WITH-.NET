@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CM_API_MVC.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class CreateSchemaMottu : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -109,8 +109,7 @@ namespace CM_API_MVC.Migrations
                     DT_INSTALACAO = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     DS_OBS = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ID_MOTO = table.Column<int>(type: "int", nullable: true),
-                    MotoIdMoto = table.Column<int>(type: "int", nullable: true)
+                    ID_MOTO = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -208,11 +207,6 @@ namespace CM_API_MVC.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_T_CM_DISPOSITIVO_IOT_MotoIdMoto",
-                table: "T_CM_DISPOSITIVO_IOT",
-                column: "MotoIdMoto");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_T_CM_MOTO_CD_TAG",
                 table: "T_CM_MOTO",
                 column: "CD_TAG",
@@ -249,14 +243,7 @@ namespace CM_API_MVC.Migrations
                 column: "ID_MOTO",
                 principalTable: "T_CM_MOTO",
                 principalColumn: "ID_MOTO",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_T_CM_DISPOSITIVO_IOT_T_CM_MOTO_MotoIdMoto",
-                table: "T_CM_DISPOSITIVO_IOT",
-                column: "MotoIdMoto",
-                principalTable: "T_CM_MOTO",
-                principalColumn: "ID_MOTO");
+                onDelete: ReferentialAction.SetNull);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_T_CM_MOTO_T_CM_RFID_CD_TAG",
@@ -264,7 +251,7 @@ namespace CM_API_MVC.Migrations
                 column: "CD_TAG",
                 principalTable: "T_CM_RFID",
                 principalColumn: "CD_TAG",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.SetNull);
         }
 
         /// <inheritdoc />

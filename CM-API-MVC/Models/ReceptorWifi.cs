@@ -38,6 +38,6 @@ namespace CM_API_MVC.Models
         public string? Descricao { get; set; }
 
         [ForeignKey("IdPatio")]
-        public Patio Patio { get; set; }
+        public Patio? Patio { get; set; }
     }
 }

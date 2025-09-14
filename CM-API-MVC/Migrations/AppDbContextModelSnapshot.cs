@@ -43,9 +43,6 @@ namespace CM_API_MVC.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID_MOTO");
 
-                    b.Property<int?>("MotoIdMoto")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -56,8 +53,6 @@ namespace CM_API_MVC.Migrations
 
                     b.HasIndex("IdMoto")
                         .IsUnique();
-
-                    b.HasIndex("MotoIdMoto");
 
                     b.ToTable("T_CM_DISPOSITIVO_IOT");
                 });
@@ -339,14 +334,10 @@ namespace CM_API_MVC.Migrations
 
             modelBuilder.Entity("CM_API_MVC.Models.DispositivoIot", b =>
                 {
-                    b.HasOne("CM_API_MVC.Models.Moto", null)
+                    b.HasOne("CM_API_MVC.Models.Moto", "Moto")
                         .WithOne()
                         .HasForeignKey("CM_API_MVC.Models.DispositivoIot", "IdMoto")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CM_API_MVC.Models.Moto", "Moto")
-                        .WithMany()
-                        .HasForeignKey("MotoIdMoto");
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Moto");
                 });
@@ -356,7 +347,7 @@ namespace CM_API_MVC.Migrations
                     b.HasOne("CM_API_MVC.Models.Rfid", "Rfid")
                         .WithOne()
                         .HasForeignKey("CM_API_MVC.Models.Moto", "CodTag")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Rfid");
                 });

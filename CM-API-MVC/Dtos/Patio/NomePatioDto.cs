@@ -1,4 +1,4 @@
-﻿namespace CM_API_MVC.Dtos
+﻿namespace CM_API_MVC.Dtos.Patio
 {
     public class NomePatioDto
     {

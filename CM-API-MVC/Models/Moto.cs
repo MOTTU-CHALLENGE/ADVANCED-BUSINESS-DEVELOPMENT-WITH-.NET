@@ -43,5 +43,6 @@ namespace CM_API_MVC.Models
 
         [ForeignKey("CodTag")]
         public Rfid? Rfid { get; set; }
+
     }
 }

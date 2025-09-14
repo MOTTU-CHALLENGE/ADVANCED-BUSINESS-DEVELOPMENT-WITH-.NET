@@ -1,5 +1,6 @@
 ﻿using CM_API_MVC.Contexts;
-using CM_API_MVC.Dtos;
+using CM_API_MVC.Dtos.Filial;
+using CM_API_MVC.Dtos.Patio;
 using CM_API_MVC.Models;
 using Microsoft.EntityFrameworkCore;
 

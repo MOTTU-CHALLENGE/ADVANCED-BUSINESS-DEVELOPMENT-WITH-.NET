@@ -1,7 +1,8 @@
-﻿namespace CM_API_MVC.Dtos
+﻿namespace CM_API_MVC.Dtos.Filial
 {
-    public class NovaFilialDto
+    public class FilialDto
     {
+        public int IdFilial { get; set; }
         public string NomeFilial { get; set; }
         public string Endereco { get; set; }
         public string Cidade { get; set; }
