@@ -11,9 +11,12 @@ namespace CM_API_MVC.Controllers.Api
 
         private readonly FilialRepository _repository;
 
-        public FilialApiController(FilialRepository repository)
+        private readonly FilialLinksHelper _linksHelper;
+
+        public FilialApiController(FilialRepository repository, FilialLinksHelper linksHelper)
         {
             _repository = repository;
+            _linksHelper = linksHelper;
         }
 
         [HttpGet]
@@ -23,18 +26,32 @@ namespace CM_API_MVC.Controllers.Api
         }
 
 
+        [HttpGet("paginado")]
+        public async Task<ActionResult<List<FilialComPatioDto>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtdFiliais = 10)
+        {
+            var limite = Math.Min(qtdFiliais, 100);
+            var registros = await _repository.GetHalfAsync(pagina, limite);
+            var total = await _repository.CountAsync();
+
+            Response.Headers.Append("X-Total-Count", total.ToString());
+            return registros;
+        }
+
+
         [HttpGet("{id}")]
-        public async Task<ActionResult<FilialComPatioDto>> GetById(int id)
+        public async Task<ActionResult<FilialComPatioHatDto>> GetById(int id)
         {
             var filial = await _repository.GetByIdAsyncDto(id);
             if (filial == null)
                 return NotFound();
 
-            return Ok(filial);
+            var filialComLinks = _linksHelper.AddLinks(filial, HttpContext);
+
+            return Ok(filialComLinks);
         }
 
         [HttpPost]
-        public async Task<ActionResult<FilialDto>> Create(NovaFilialDto filialDto)
+        public async Task<ActionResult<FilialComPatioHatDto>> Create(NovaFilialDto filialDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -43,7 +60,7 @@ namespace CM_API_MVC.Controllers.Api
             var novaFilial = await _repository.AddAsyncDto(filialDto);
 
             // Retornar o DTO com ID e demais dados
-            var retorno = new FilialDto
+            var retorno = new FilialComPatioDto
             {
                 IdFilial = novaFilial.IdFilial,
                 NomeFilial = novaFilial.NomeFilial,
@@ -56,7 +73,9 @@ namespace CM_API_MVC.Controllers.Api
                 DataInauguracao = novaFilial.DataInauguracao
             };
 
-            return CreatedAtAction(nameof(GetById), new { id = retorno.IdFilial }, retorno);
+            var filialComLinks = _linksHelper.AddLinks(retorno, HttpContext);
+
+            return CreatedAtAction(nameof(GetById), new { id = filialComLinks.IdFilial }, filialComLinks);
         }
 
 

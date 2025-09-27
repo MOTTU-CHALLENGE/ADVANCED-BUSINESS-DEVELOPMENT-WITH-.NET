@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Dtos\NovaPasta1\**" />
+    <Compile Remove="Dtos\NovaPasta\**" />
+    <Content Remove="Dtos\NovaPasta1\**" />
+    <Content Remove="Dtos\NovaPasta\**" />
+    <EmbeddedResource Remove="Dtos\NovaPasta1\**" />
+    <EmbeddedResource Remove="Dtos\NovaPasta\**" />
+    <None Remove="Dtos\NovaPasta1\**" />
+    <None Remove="Dtos\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Dtos\Class.cs" />
   </ItemGroup>
 
@@ -25,8 +36,6 @@
 
 
 	<ItemGroup>
-    <Folder Include="Dtos\NovaPasta1\" />
-    <Folder Include="Dtos\NovaPasta\" />
     <Folder Include="Migrations\" />
     <Folder Include="Services\" />
   </ItemGroup>

@@ -20,3 +20,37 @@ docker run -d \
   -p 3306:3306 \
   mysql:8.0
 ```
+
+/api/PatioApi
+
+
+## CLI da aplicação 
+
+1. sql
+
+
+
+docker exec -it mysql-dev mysql -u root -p
+
+CREATE DATABASE mottuDB;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON mottuDB.* TO 'mottuser'@'%';
+FLUSH PRIVILEGES;
+
+2. mongo
+
+docker exec -it mongo-dev mongosh -u admin -p adminpass --authenticationDatabase admin
+
+use mottuDB
+
+db.createUser({
+  user: "mottuser",
+  pwd: "mottupass",
+  roles: [
+    {
+      role: "readWrite",
+      db: "mottuDB"
+    }
+  ]
+})
+

@@ -9,10 +9,12 @@ namespace CM_API_MVC.Controllers.Api
     public class PatioApiController : ControllerBase
     {
         private readonly PatioRepository _repository;
+        private readonly PatioLinksHelper _linksHelper;
 
-        public PatioApiController(PatioRepository repository)
+        public PatioApiController(PatioRepository repository, PatioLinksHelper linksHelper)
         {
             _repository = repository;
+            _linksHelper = linksHelper;
         }
 
         [HttpGet]
@@ -22,24 +24,27 @@ namespace CM_API_MVC.Controllers.Api
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<PatioComWifiDto>> GetById(int id)
+        public async Task<ActionResult<PatioComWifiHatDto>> GetById(int id)
         {
             var patio = await _repository.GetByIdAsyncDto(id);
             if (patio == null)
                 return NotFound();
 
-            return Ok(patio);
+            var patioComLinks = _linksHelper.AddLinks(patio, HttpContext);
+
+
+            return Ok(patioComLinks);
         }
 
         [HttpPost]
-        public async Task<ActionResult<PatioDto>> Create(NovoPatioDto patioDto)
+        public async Task<ActionResult<PatioComWifiHatDto>> Create(NovoPatioDto patioDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var patio = await _repository.AddAsyncDto(patioDto);
 
-            var retorno = new PatioDto
+            var retorno = new PatioComWifiDto
             {
                 IdPatio = patio.IdPatio,
                 IdFilial = patio.IdFilial,
@@ -49,7 +54,9 @@ namespace CM_API_MVC.Controllers.Api
                 Descricao = patio.Descricao
             };
 
-            return CreatedAtAction(nameof(GetById), new { id = retorno.IdPatio }, patioDto);
+            var patioComLinks = _linksHelper.AddLinks(retorno, HttpContext);
+
+            return CreatedAtAction(nameof(GetById), new { id = patioComLinks.IdPatio }, patioComLinks);
         }
 
         [HttpPut("{id}")]

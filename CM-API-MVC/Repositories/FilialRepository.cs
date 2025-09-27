@@ -34,6 +34,34 @@ namespace CM_API_MVC.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<FilialComPatioDto>> GetHalfAsync(int pagina, int qtdFiliais)
+        {
+            return await _context.Filiais
+                .Include(f => f.Patios)
+                .OrderBy(f => f.IdFilial)
+                .Skip((pagina - 1) * qtdFiliais)
+                .Take(qtdFiliais)
+                .Select(f => new FilialComPatioDto
+                {
+                    IdFilial = f.IdFilial,
+                    NomeFilial = f.NomeFilial,
+                    Endereco = f.Endereco,
+                    Cidade = f.Cidade,
+                    Estado = f.Estado,
+                    Pais = f.Pais,
+                    Cep = f.Cep,
+                    Telefone = f.Telefone,
+                    DataInauguracao = f.DataInauguracao,
+                    Patios = f.Patios.Select(p => new NomePatioDto
+                    {
+                        IdPatio = p.IdPatio,
+                        NomePatio = p.NomePatio
+                    }).ToList()
+                })
+                .ToListAsync();
+
+        }
+
         public async Task<FilialComPatioDto?> GetByIdAsyncDto(int id)
         {
             return await _context.Filiais
@@ -103,6 +131,9 @@ namespace CM_API_MVC.Repositories
             return filial;
         }
 
-
+        public async Task<int> CountAsync()
+        {
+            return await _context.Filiais.CountAsync();
+        }
     }
 }

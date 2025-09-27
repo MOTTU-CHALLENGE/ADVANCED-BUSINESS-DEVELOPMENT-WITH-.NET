@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CM_API_MVC.Models
 {
-    
+
     public class RegistroIntensidadeSinal
     {
         [BsonId]

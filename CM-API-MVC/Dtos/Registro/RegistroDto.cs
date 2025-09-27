@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-
-namespace CM_API_MVC.Dtos.Registro
+﻿namespace CM_API_MVC.Dtos.Registro
 {
     public class RegistroDto
     {

@@ -9,10 +9,12 @@ namespace CM_API_MVC.Controllers.Api
     public class MotoApiController : ControllerBase
     {
         private readonly MotoRepository _repository;
+        private readonly MotoLinksHelper _linksHelper;
 
-        public MotoApiController(MotoRepository repository)
+        public MotoApiController(MotoRepository repository, MotoLinksHelper linksHelper)
         {
             _repository = repository;
+            _linksHelper = linksHelper;
         }
 
         [HttpGet]
@@ -21,19 +23,31 @@ namespace CM_API_MVC.Controllers.Api
             return Ok(await _repository.GetAllAsyncDto());
         }
 
+        [HttpGet("paginado")]
+        public async Task<ActionResult<List<MotoDto>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtdMotos = 10)
+        {
+            var limite = Math.Min(qtdMotos, 100);
+            var registros = await _repository.GetHalfAsync(pagina, limite);
+            var total = await _repository.CountAsync();
+
+            Response.Headers.Append("X-Total-Count", total.ToString());
+            return registros;
+        }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<MotoDto>> GetById(int id)
+        public async Task<ActionResult<MotoHatDto>> GetById(int id)
         {
-            var wifi = await _repository.GetByIdAsyncDto(id);
-            if (wifi == null)
+            var moto = await _repository.GetByIdAsyncDto(id);
+            if (moto == null)
                 return NotFound();
 
-            return Ok(wifi);
+            var motoComLinks = _linksHelper.AddLinks(moto, HttpContext);
+
+            return Ok(motoComLinks);
         }
 
         [HttpPost]
-        public async Task<ActionResult<MotoDto>> Create(NovaMotoDto dto)
+        public async Task<ActionResult<MotoHatDto>> Create(NovaMotoDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -42,7 +56,7 @@ namespace CM_API_MVC.Controllers.Api
             var novaMoto = await _repository.AddAsyncDto(dto);
 
             // Retornar o DTO com ID e demais dados
-            var retorno = new MotoDto
+            var moto = new MotoDto
             {
 
                 IdMoto = novaMoto.IdMoto,
@@ -55,7 +69,9 @@ namespace CM_API_MVC.Controllers.Api
                 Modelo = novaMoto.Modelo,
             };
 
-            return CreatedAtAction(nameof(GetById), new { id = retorno.IdMoto }, retorno);
+            var motoComLinks = _linksHelper.AddLinks(moto, HttpContext);
+
+            return CreatedAtAction(nameof(GetById), new { id = motoComLinks.IdMoto }, motoComLinks);
         }
 
 

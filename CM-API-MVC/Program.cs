@@ -1,14 +1,18 @@
 using CM_API_MVC.Contexts;
+using CM_API_MVC.Dtos.Filial;
+using CM_API_MVC.Dtos.Moto;
+using CM_API_MVC.Dtos.Patio;
 using CM_API_MVC.Repositories;
 using CM_API_MVC.Settings;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -22,6 +26,10 @@ builder.Services.AddScoped<FilialRepository>();
 builder.Services.AddScoped<WifiRepository>();
 builder.Services.AddScoped<MotoRepository>();
 builder.Services.AddScoped<IotRepository>();
+builder.Services.AddScoped<FilialLinksHelper>();
+builder.Services.AddScoped<PatioLinksHelper>();
+builder.Services.AddScoped<MotoLinksHelper>();
+
 
 
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("ConnectionStrings"));
@@ -42,17 +50,30 @@ builder.Services.AddSingleton(sp =>
 
 builder.Services.AddSingleton<RegistroSinalRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+    );
+});
+
+
 var app = builder.Build();
 
 app.UseSwagger();
-app.UseSwaggerUI();
 
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
@@ -63,4 +84,10 @@ app.UseEndpoints(endpoints =>
         pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 
+
+
 app.Run();
+
+//dotnet publish -c Release -o ./publicado
+
+//dotnet ef database update

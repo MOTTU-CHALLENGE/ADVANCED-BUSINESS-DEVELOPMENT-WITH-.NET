@@ -27,6 +27,25 @@ namespace CM_API_MVC.Repositories
                 }).ToListAsync();
         }
 
+        public async Task<List<MotoDto>> GetHalfAsync(int pagina, int qtdMotos)
+        {
+            return await _context.Motos
+                .OrderBy (m => m.IdMoto)
+                .Skip ((pagina - 1) * qtdMotos)
+                .Take(qtdMotos)
+                .Select(m => new MotoDto
+                {
+                    IdMoto = m.IdMoto,
+                    CodTag = m.CodTag,
+                    TipoMoto = m.TipoMoto,
+                    Placa = m.Placa,
+                    Status = m.Status,
+                    DataCadastro = m.DataCadastro,
+                    AnoFabricacao = m.AnoFabricacao,
+                    Modelo = m.Modelo,
+                }).ToListAsync();
+        }
+
         public async Task<MotoDto?> GetByIdAsyncDto(int id)
         {
             return await _context.Motos
@@ -81,6 +100,11 @@ namespace CM_API_MVC.Repositories
             await _context.Motos.AddAsync(moto);
             await _context.SaveChangesAsync();
             return moto;
+        }
+
+        public async Task<int> CountAsync()
+        {
+            return await _context.Motos.CountAsync();
         }
     }
 }
