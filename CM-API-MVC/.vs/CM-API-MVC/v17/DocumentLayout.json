@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\controllers\\api\\registrosinalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:controllers\\api\\registrosinalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|c:\\users\\xfran\\desktop\\2tdspv\\challengmottu\\advanced-business-development-with-.net\\cm-api-mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B828AFB9-1502-4187-8692-62C0302138E0}|CM-API-MVC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,28 +26,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegistroSinalController.cs",
+              "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\RegistroSinalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Api\\RegistroSinalController.cs",
+              "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Controllers\\Api\\RegistroSinalController.cs",
+              "RelativeToolTip": "Controllers\\Api\\RegistroSinalController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T22:02:34.482Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-28T02:31:59.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -56,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MotoRepository.cs",
               "DocumentMoniker": "C:\\Users\\xfran\\Desktop\\2TDSPV\\ChallengMottu\\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\\CM-API-MVC\\Repositories\\MotoRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\MotoRepository.cs",
