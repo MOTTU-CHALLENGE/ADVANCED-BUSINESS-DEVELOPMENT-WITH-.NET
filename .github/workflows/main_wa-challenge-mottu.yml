@@ -25,9 +25,12 @@ jobs:
       with:
         dotnet-version: '8.x'
 
+    - name: Restore dependencies
+      run: dotnet restore CM-API-MVC/CM-API-MVC.csproj
+
     - name: Build with dotnet
-      run: dotnet build --configuration Release
-    
+      run: dotnet build CM-API-MVC/CM-API-MVC.csproj --configuration Release
+
     - name: dotnet publish
       run: dotnet publish CM-API-MVC/CM-API-MVC.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp 
 
