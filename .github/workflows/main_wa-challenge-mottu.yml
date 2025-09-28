@@ -13,6 +13,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
+    env:
+      MYSQL_CONNECTION: ${{ secrets.MYSQL_CONNECTION }}
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}    
+    
     steps:
     - uses: actions/checkout@v2
     
@@ -25,7 +29,7 @@ jobs:
       run: dotnet build --configuration Release
     
     - name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
+      run: dotnet publish CM-API-MVC/CM-API-MVC.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp 
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
