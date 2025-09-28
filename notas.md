@@ -34,7 +34,8 @@ docker exec -it mysql-dev mysql -u root -p
 
 CREATE DATABASE mottuDB;
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON mottuDB.* TO 'mottuser'@'%';
+CREATE USER 'mottuser'@'%' IDENTIFIED BY 'mottupass'
+GRANT CREATE, SELECT, INSERT, UPDATE, DELETE ON mottuDB.* TO 'mottuser'@'%';
 FLUSH PRIVILEGES;
 
 2. mongo
@@ -54,3 +55,5 @@ db.createUser({
   ]
 })
 
+
+usando de variaveis de ambiente 

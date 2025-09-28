@@ -16,9 +16,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
+//    new MySqlServerVersion(new Version(8, 0, 36))));
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
-    new MySqlServerVersion(new Version(8, 0, 36))));
+    options.UseMySql(
+        Environment.GetEnvironmentVariable("MySqlConnection") ?? builder.Configuration.GetConnectionString("MySqlConnection"),
+        new MySqlServerVersion(new Version(8, 0, 36))
+    ));
+
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<PatioRepository>();
@@ -31,8 +38,12 @@ builder.Services.AddScoped<PatioLinksHelper>();
 builder.Services.AddScoped<MotoLinksHelper>();
 
 
+//builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("ConnectionStrings"));
 
-builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("ConnectionStrings"));
+builder.Services.Configure<MongoDbSettings>(options =>
+{
+    options.ConnectionString = Environment.GetEnvironmentVariable("MongoConnection") ?? builder.Configuration.GetConnectionString("MongoConnection");
+});
 
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
