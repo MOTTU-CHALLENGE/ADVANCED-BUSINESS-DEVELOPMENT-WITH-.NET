@@ -40,17 +40,19 @@ builder.Services.AddScoped<MotoLinksHelper>();
 
 //builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("ConnectionStrings"));
 
-builder.Services.Configure<MongoDbSettings>(options =>
-{
-    options.ConnectionString = Environment.GetEnvironmentVariable("MONGODB_URI") ?? builder.Configuration.GetConnectionString("MONGODB_URI");
-});
-
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
-    var settings = builder.Configuration.GetSection("ConnectionStrings");
-    var connectionString = settings["MONGODB_URI"];
+    var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI")
+                           ?? builder.Configuration.GetConnectionString("MONGODB_URI");
+
+    if (string.IsNullOrEmpty(connectionString))
+    {
+        throw new InvalidOperationException("MongoDB connection string is not configured.");
+    }
+
     return new MongoClient(connectionString);
 });
+
 
 builder.Services.AddSingleton(sp =>
 {
