@@ -1,1 +1,6 @@
 # ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET
+
+DROP USER IF EXISTS 'mottuser'@'%';
+CREATE USER 'mottuser'@'%' IDENTIFIED WITH mysql_native_password BY 'mottupass';
+GRANT CREATE, SELECT, INSERT, UPDATE, DELETE ON mottuDB.* TO 'mottuser'@'%';
+FLUSH PRIVILEGES;
