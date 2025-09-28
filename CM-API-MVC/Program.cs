@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
-        Environment.GetEnvironmentVariable("MySqlConnection") ?? builder.Configuration.GetConnectionString("MySqlConnection"),
+        Environment.GetEnvironmentVariable("MYSQL_CONNECTION") ?? builder.Configuration.GetConnectionString("MYSQL_CONNECTION"),
         new MySqlServerVersion(new Version(8, 0, 36))
     ));
 
@@ -42,13 +42,13 @@ builder.Services.AddScoped<MotoLinksHelper>();
 
 builder.Services.Configure<MongoDbSettings>(options =>
 {
-    options.ConnectionString = Environment.GetEnvironmentVariable("MongoConnection") ?? builder.Configuration.GetConnectionString("MongoConnection");
+    options.ConnectionString = Environment.GetEnvironmentVariable("MONGODB_URI") ?? builder.Configuration.GetConnectionString("MONGODB_URI");
 });
 
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
     var settings = builder.Configuration.GetSection("ConnectionStrings");
-    var connectionString = settings["MongoConnection"];
+    var connectionString = settings["MONGODB_URI"];
     return new MongoClient(connectionString);
 });
 
