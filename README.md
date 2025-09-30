@@ -57,3 +57,4 @@ Cada Moto terá um IOT que enviará os dados de `intensidade - Endereco MAC`.
 ## **Repositório do GIT**
 
 > [https://github.com/challenge-mottu/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET](https://github.com/challenge-mottu/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET)
+=======
