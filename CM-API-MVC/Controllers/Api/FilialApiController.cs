@@ -27,9 +27,9 @@ namespace CM_API_MVC.Controllers.Api
 
 
         [HttpGet("paginado")]
-        public async Task<ActionResult<List<FilialComPatioDto>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtdFiliais = 10)
+        public async Task<ActionResult<List<FilialComPatioDto>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtd = 10)
         {
-            var limite = Math.Min(qtdFiliais, 100);
+            var limite = Math.Min(qtd, 100);
             var registros = await _repository.GetHalfAsync(pagina, limite);
             var total = await _repository.CountAsync();
 

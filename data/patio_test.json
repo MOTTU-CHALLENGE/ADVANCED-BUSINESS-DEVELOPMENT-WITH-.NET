@@ -1,0 +1,23 @@
+[
+    {
+  "idFilial": 1,
+  "nomePatio": "01 - Base",
+  "capacidadeMax": 100,
+  "area": 100,
+  "descricao": null
+},
+    {
+  "idFilial": 2,
+  "nomePatio": "01 - Base",
+  "capacidadeMax": 100,
+  "area": 100,
+  "descricao": null
+},
+    {
+  "idFilial": 2,
+  "nomePatio": "02 - Manutencao",
+  "capacidadeMax": 20,
+  "area": 20,
+  "descricao": null
+}
+]

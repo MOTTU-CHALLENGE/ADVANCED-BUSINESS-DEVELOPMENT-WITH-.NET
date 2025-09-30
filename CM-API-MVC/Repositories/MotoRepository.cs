@@ -27,12 +27,12 @@ namespace CM_API_MVC.Repositories
                 }).ToListAsync();
         }
 
-        public async Task<List<MotoDto>> GetHalfAsync(int pagina, int qtdMotos)
+        public async Task<List<MotoDto>> GetHalfAsync(int pagina, int qtd)
         {
             return await _context.Motos
                 .OrderBy (m => m.IdMoto)
-                .Skip ((pagina - 1) * qtdMotos)
-                .Take(qtdMotos)
+                .Skip ((pagina - 1) * qtd)
+                .Take(qtd)
                 .Select(m => new MotoDto
                 {
                     IdMoto = m.IdMoto,
