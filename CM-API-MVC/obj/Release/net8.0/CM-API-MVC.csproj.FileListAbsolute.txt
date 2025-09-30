@@ -152,3 +152,15 @@ C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\CM-API-MVC.deps.json
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\CM-API-MVC.runtimeconfig.json
 C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\CM-API-MVC.staticwebassets.endpoints.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\web.config
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\appsettings.Development.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\appsettings.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\CM-API-MVC.deps.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\CM-API-MVC.runtimeconfig.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\CM-API-MVC.staticwebassets.endpoints.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\web.config
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\appsettings.Development.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\appsettings.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\CM-API-MVC.deps.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\CM-API-MVC.runtimeconfig.json
+C:\Users\xfran\Desktop\2TDSPV\ChallengMottu\ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET\CM-API-MVC\bin\Release\net8.0\publicado\publicado\publicado\CM-API-MVC.staticwebassets.endpoints.json

@@ -34,13 +34,13 @@ namespace CM_API_MVC.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<FilialComPatioDto>> GetHalfAsync(int pagina, int qtdFiliais)
+        public async Task<List<FilialComPatioDto>> GetHalfAsync(int pagina, int qtd)
         {
             return await _context.Filiais
                 .Include(f => f.Patios)
                 .OrderBy(f => f.IdFilial)
-                .Skip((pagina - 1) * qtdFiliais)
-                .Take(qtdFiliais)
+                .Skip((pagina - 1) * qtd)
+                .Take(qtd)
                 .Select(f => new FilialComPatioDto
                 {
                     IdFilial = f.IdFilial,

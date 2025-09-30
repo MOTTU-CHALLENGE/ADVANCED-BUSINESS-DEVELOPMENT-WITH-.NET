@@ -39,6 +39,9 @@ services:
     volumes:
       - ./publicado:/app
     restart: unless-stopped
+    environment:
+      MYSQL_CONNECTION: server=mysql;port=3306;database=mottuDB;user=mottuser;password=mottupass
+      MONGODB_URI: mongodb://mottuser:mottupass@mongo:27017/mottuDB
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 10s

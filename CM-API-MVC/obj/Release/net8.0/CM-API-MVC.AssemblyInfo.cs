@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CM-API-MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a740ddec6cfb18269d5664e56c84d67c61337dbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52511851acdefe929843ad23c974dd78a263075f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CM-API-MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CM-API-MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

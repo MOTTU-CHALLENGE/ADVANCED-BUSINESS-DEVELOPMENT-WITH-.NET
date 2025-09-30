@@ -20,17 +20,17 @@ namespace CM_API_MVC.Controllers.Api
         public async Task<ActionResult<List<RegistroIntensidadeSinal>>> GetAll() =>
             await _repository.GetAllAsync();
 
-        //[HttpGet("paginado")]
-        //public async Task<ActionResult<List<RegistroIntensidadeSinal>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtdRegistros = 10)
-        //{
+        [HttpGet("paginado")]
+        public async Task<ActionResult<List<RegistroIntensidadeSinal>>> GetHalf([FromQuery] int pagina = 1, [FromQuery] int qtd = 10)
+        {
 
-        //    var limite = Math.Min(qtdRegistros, 100);
-        //    var registros = await _repository.GetHalfAsync(pagina, limite);
-        //    var total = await _repository.CountAsync();
+            var limite = Math.Min(qtd, 100);
+            var registros = await _repository.GetHalfAsync(pagina, limite);
+            var total = await _repository.CountAsync();
 
-        //    Response.Headers.Append("X-Total-Count", total.ToString());
-        //    return registros;
-        //}
+            Response.Headers.Append("X-Total-Count", total.ToString());
+            return registros;
+        }
 
         [HttpGet("{id}", Name = "Registro")]
         public async Task<ActionResult<RegistroIntensidadeSinal>> GetById(string id)

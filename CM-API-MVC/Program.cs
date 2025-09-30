@@ -110,3 +110,5 @@ app.Run();
 //dotnet publish -c Release -o ./publicado
 
 //dotnet ef database update
+
+//dotnet ef migrations script -o script.sql

@@ -44,12 +44,12 @@ namespace CM_API_MVC.Repositories
             return resultado.DeletedCount > 0;
         }
 
-        public async Task<List<RegistroIntensidadeSinal>> GetHalfAsync(int pagina, int qtdRegistros)
+        public async Task<List<RegistroIntensidadeSinal>> GetHalfAsync(int pagina, int qtd)
         {
             return await _collection
                .Find(_ => true)
-               .Skip((pagina - 1) * qtdRegistros)
-               .Limit(qtdRegistros)
+               .Skip((pagina - 1) * qtd)
+               .Limit(qtd)
                .ToListAsync();
         }
 
