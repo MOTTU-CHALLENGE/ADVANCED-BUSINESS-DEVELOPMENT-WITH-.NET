@@ -1,6 +1,6 @@
 # ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET
 
-## **Integrantes**
+## **👥 Integrantes**
 
 |            NOME             |   RM   |
 | :-------------------------: | :----: |
@@ -8,17 +8,35 @@
 | Luiz Felipe Campos da Silva | 555591 |
 |   Samuel Patrick Yariwake   | 556461 |
 
-## **Objetivo**
+## **🎯 Objetivo**
 
 ### Rastrear uma moto no patio da MOTTU.
 
-## **Solução**
+## **💡 Solução**
 
 ### Utilizar IOT para rastrear uma moto no patio da MOTTU, triangulando a localização com o uso de WIFI.
 
 A proposta é usar **dispositivos IoT (como o ESP32)** para captar a intensidade de sinal de redes WiFi no entorno, mesmo sem conexão ativa, e assim **triangular a localização da moto** de forma estimada.
 
 Com um custo aproximado de **R$ 50,00 por dispositivo**, conseguimos montar um sistema inteligente e acessível para monitoramento interno.
+
+## **🧱 Arquitetura**
+
+![estrutura_simples](<./img/Azure%20DevOps%20(1).png>)
+
+- O uso do **ESP32** permite a captação de sinais WiFi.
+- Os dados são enviados para uma **API construída em .NET**, integrando com ferramentas da Azure.
+- O uso da **Azure App Services** permite escalar a aplicação facilmente e garante alta disponibilidade.
+- A divisão entre **CosmosDB** (para dados não estruturados) e **MySQL** (dados relacionais) facilita o gerenciamento.
+- O uso de **Application Insights** permite monitorar a performance da API em tempo real.
+
+### _Fluxo_
+
+1. IOT envia dado de `intensidade - Endereco MAC`.
+2. API em DOTNET envia para o banco de dados NoSQL.
+3. Desenvolvimento python lê os documentos e gera uma coordenada de localização no patio
+4. Registro da posição no banco MySQL
+5. Envio da posição para o front por meio da API DOTNET
 
 ## **Desenvolvimento**
 
@@ -48,13 +66,22 @@ Cada Moto terá um IOT que enviará os dados de `intensidade - Endereco MAC`.
 | PUT    | **/api/[entidade]/{id}**                        | Atualiza um registro existente   |
 | DELETE | **/api/[entidade]/{id}**                        | Remove um registro existente     |
 
-- `Registro Sinal` não tem PUT, já que não se pode adulterar um registro.
+> `Registro Sinal` não tem PUT, já que não se pode adulterar um registro.
+
+_🎥 Video de exemplos de uso:_ [Clique aqui](https://www.youtube.com/watch?v=ggy3IovgXw0)
+
+--- 
+
+![POST](./img/POST.png)
+![GET](./img/GET.png)
+![GETBYID](./img/GETBYID.png)
+![GETHALF](./img/GETHALF.png)
+![PUT](./img/PUT.png)
+![DELETE](./img/DELETE.png)
 
 ---
 
-## **Video de exemplos de uso**
+## **🔗 Links adicionais**
 
-## **Repositório do GIT**
-
-> [https://github.com/challenge-mottu/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET](https://github.com/challenge-mottu/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET)
-=======
+- _Deploy:_ [Repositório no github](https://github.com/challenge-mottu/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET)
+- _Aplicação:_ [WebApp](https://wa-challenge-mottu.azurewebsites.net)
