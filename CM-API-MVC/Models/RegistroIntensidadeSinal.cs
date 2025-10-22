@@ -14,7 +14,7 @@ namespace CM_API_MVC.Models
         public int IdIot { get; set; }
 
         [BsonElement("DS_ENDERECO_MAC")]
-        public string Bssid { get; set; }
+        public required string Bssid { get; set; }
 
         [BsonElement("NR_INTENSIDADE_SINAL")]
         public double Rssi { get; set; }

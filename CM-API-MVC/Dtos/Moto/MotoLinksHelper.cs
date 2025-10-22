@@ -1,5 +1,4 @@
 ﻿using CM_API_MVC.Dtos.Link;
-using static System.Net.WebRequestMethods;
 
 namespace CM_API_MVC.Dtos.Moto
 {

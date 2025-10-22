@@ -36,10 +36,10 @@ namespace CM_API_MVC.Models
         public string? Setor { get; set; }
 
         [ForeignKey("IdDispositivo")]
-        public DispositivoIot DispositivoIot { get; set; }
+        public required DispositivoIot DispositivoIot { get; set; }
 
         [ForeignKey("IdPatio")]
-        public Patio Patio { get; set; }
+        public required Patio Patio { get; set; }
 
 
 

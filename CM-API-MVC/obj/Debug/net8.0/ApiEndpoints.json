@@ -1,8 +1,34 @@
 [
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.FilialApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.AuthApiController",
+    "Method": "TestLogin",
+    "RelativePath": "api/v1/AuthApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.AuthApiController",
+    "Method": "Login",
+    "RelativePath": "api/v1/AuthApi/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "CM_API_MVC.Models.UserLogin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
     "Method": "GetAll",
-    "RelativePath": "api/FilialApi",
+    "RelativePath": "api/v1/FilialApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,9 +46,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.FilialApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
     "Method": "Create",
-    "RelativePath": "api/FilialApi",
+    "RelativePath": "api/v1/FilialApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -35,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Filial.FilialDto",
+        "Type": "CM_API_MVC.Dtos.Filial.FilialComPatioHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,9 +72,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.FilialApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
     "Method": "GetById",
-    "RelativePath": "api/FilialApi/{id}",
+    "RelativePath": "api/v1/FilialApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -61,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Filial.FilialComPatioDto",
+        "Type": "CM_API_MVC.Dtos.Filial.FilialComPatioHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -72,9 +98,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.FilialApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
     "Method": "Update",
-    "RelativePath": "api/FilialApi/{id}",
+    "RelativePath": "api/v1/FilialApi/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -93,9 +119,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.FilialApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
     "Method": "Delete",
-    "RelativePath": "api/FilialApi/{id}",
+    "RelativePath": "api/v1/FilialApi/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -109,9 +135,40 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.IotApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiController",
+    "Method": "GetHalf",
+    "RelativePath": "api/v1/FilialApi/paginado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qtd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Dtos.Filial.FilialComPatioDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiController",
     "Method": "GetAll",
-    "RelativePath": "api/IotApi",
+    "RelativePath": "api/v1/IotApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -129,9 +186,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.IotApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiController",
     "Method": "Create",
-    "RelativePath": "api/IotApi",
+    "RelativePath": "api/v1/IotApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -155,9 +212,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.IotApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiController",
     "Method": "GetById",
-    "RelativePath": "api/IotApi/{id}",
+    "RelativePath": "api/v1/IotApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -181,9 +238,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.IotApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiController",
     "Method": "Delete",
-    "RelativePath": "api/IotApi/{id}",
+    "RelativePath": "api/v1/IotApi/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -197,9 +254,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.MotoApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
     "Method": "GetAll",
-    "RelativePath": "api/MotoApi",
+    "RelativePath": "api/v1/MotoApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -217,9 +274,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.MotoApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
     "Method": "Create",
-    "RelativePath": "api/MotoApi",
+    "RelativePath": "api/v1/MotoApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -232,7 +289,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Moto.MotoDto",
+        "Type": "CM_API_MVC.Dtos.Moto.MotoHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -243,9 +300,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.MotoApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
     "Method": "GetById",
-    "RelativePath": "api/MotoApi/{id}",
+    "RelativePath": "api/v1/MotoApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -258,7 +315,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Moto.MotoDto",
+        "Type": "CM_API_MVC.Dtos.Moto.MotoHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,9 +326,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.MotoApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
     "Method": "Update",
-    "RelativePath": "api/MotoApi/{id}",
+    "RelativePath": "api/v1/MotoApi/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -290,9 +347,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.MotoApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
     "Method": "Delete",
-    "RelativePath": "api/MotoApi/{id}",
+    "RelativePath": "api/v1/MotoApi/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -306,9 +363,40 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.PatioApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiController",
+    "Method": "GetHalf",
+    "RelativePath": "api/v1/MotoApi/paginado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qtd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Dtos.Moto.MotoDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiController",
     "Method": "GetAll",
-    "RelativePath": "api/PatioApi",
+    "RelativePath": "api/v1/PatioApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -326,9 +414,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.PatioApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiController",
     "Method": "Create",
-    "RelativePath": "api/PatioApi",
+    "RelativePath": "api/v1/PatioApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -341,7 +429,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Patio.PatioDto",
+        "Type": "CM_API_MVC.Dtos.Patio.PatioComWifiHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -352,9 +440,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.PatioApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiController",
     "Method": "GetById",
-    "RelativePath": "api/PatioApi/{id}",
+    "RelativePath": "api/v1/PatioApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -367,7 +455,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CM_API_MVC.Dtos.Patio.PatioComWifiDto",
+        "Type": "CM_API_MVC.Dtos.Patio.PatioComWifiHatDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -378,9 +466,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.PatioApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiController",
     "Method": "Update",
-    "RelativePath": "api/PatioApi/{id}",
+    "RelativePath": "api/v1/PatioApi/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -399,9 +487,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.PatioApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiController",
     "Method": "Delete",
-    "RelativePath": "api/PatioApi/{id}",
+    "RelativePath": "api/v1/PatioApi/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -415,9 +503,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.RegistroSinalController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiController",
     "Method": "GetAll",
-    "RelativePath": "api/RegistroSinal",
+    "RelativePath": "api/v1/RegistroSinalApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -435,9 +523,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.RegistroSinalController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiController",
     "Method": "Create",
-    "RelativePath": "api/RegistroSinal",
+    "RelativePath": "api/v1/RegistroSinalApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -461,9 +549,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.RegistroSinalController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiController",
     "Method": "Delete",
-    "RelativePath": "api/RegistroSinal",
+    "RelativePath": "api/v1/RegistroSinalApi",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -477,9 +565,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.RegistroSinalController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiController",
     "Method": "GetById",
-    "RelativePath": "api/RegistroSinal/{id}",
+    "RelativePath": "api/v1/RegistroSinalApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -500,13 +588,12 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "Registro"
+    ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.RegistroSinalController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiController",
     "Method": "GetHalf",
-    "RelativePath": "api/RegistroSinal/paginado",
+    "RelativePath": "api/v1/RegistroSinalApi/paginado",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -517,7 +604,7 @@
         "IsRequired": false
       },
       {
-        "Name": "qtdRegistros",
+        "Name": "qtd",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -535,9 +622,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.WifiApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiController",
     "Method": "GetAll",
-    "RelativePath": "api/WifiApi",
+    "RelativePath": "api/v1/WifiApi",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -555,9 +642,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.WifiApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiController",
     "Method": "Create",
-    "RelativePath": "api/WifiApi",
+    "RelativePath": "api/v1/WifiApi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -581,9 +668,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.WifiApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiController",
     "Method": "GetById",
-    "RelativePath": "api/WifiApi/{id}",
+    "RelativePath": "api/v1/WifiApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -607,9 +694,9 @@
     ]
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.WifiApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiController",
     "Method": "Update",
-    "RelativePath": "api/WifiApi/{id}",
+    "RelativePath": "api/v1/WifiApi/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -628,9 +715,740 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CM_API_MVC.Controllers.Api.WifiApiController",
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiController",
     "Method": "Delete",
-    "RelativePath": "api/WifiApi/{id}",
+    "RelativePath": "api/v1/WifiApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v2.AuthApiV2Controller",
+    "Method": "TestLogin",
+    "RelativePath": "api/v2/AuthApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v2.AuthApiV2Controller",
+    "Method": "Login",
+    "RelativePath": "api/v2/AuthApiV/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "CM_API_MVC.Models.UserLogin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/FilialApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.Filial.FilialComPatioDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/FilialApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filialDto",
+        "Type": "CM_API_MVC.Dtos.Filial.NovaFilialDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Filial.FilialComPatioHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/FilialApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Filial.FilialComPatioHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "Update",
+    "RelativePath": "api/v2/FilialApiV/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "filial",
+        "Type": "CM_API_MVC.Dtos.Filial.FilialDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/FilialApiV/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.FilialApiV2Controller",
+    "Method": "GetHalf",
+    "RelativePath": "api/v2/FilialApiV/paginado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qtd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Dtos.Filial.FilialComPatioDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/IotApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.Iot.IotDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/IotApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CM_API_MVC.Dtos.Iot.NovoIotDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Iot.IotCadastradoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/IotApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Iot.IotComPosicaoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.IotApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/IotApiV/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/MotoApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.Moto.MotoDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/MotoApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CM_API_MVC.Dtos.Moto.NovaMotoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Moto.MotoHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/MotoApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Moto.MotoHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "Update",
+    "RelativePath": "api/v2/MotoApiV/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CM_API_MVC.Dtos.Moto.MotoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/MotoApiV/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.MotoApiV2Controller",
+    "Method": "GetHalf",
+    "RelativePath": "api/v2/MotoApiV/paginado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qtd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Dtos.Moto.MotoDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/PatioApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.Patio.PatioComWifiDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/PatioApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patioDto",
+        "Type": "CM_API_MVC.Dtos.Patio.NovoPatioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Patio.PatioComWifiHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/PatioApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Patio.PatioComWifiHatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiV2Controller",
+    "Method": "Update",
+    "RelativePath": "api/v2/PatioApiV/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patio",
+        "Type": "CM_API_MVC.Dtos.Patio.PatioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.PatioApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/PatioApiV/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/RegistroSinalApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Models.RegistroIntensidadeSinal, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/RegistroSinalApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registro",
+        "Type": "CM_API_MVC.Dtos.Registro.RegistroDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Models.RegistroIntensidadeSinal",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/RegistroSinalApiV",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/RegistroSinalApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Models.RegistroIntensidadeSinal",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
+    "Method": "GetHalf",
+    "RelativePath": "api/v2/RegistroSinalApiV/paginado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qtd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CM_API_MVC.Models.RegistroIntensidadeSinal, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiV2Controller",
+    "Method": "GetAll",
+    "RelativePath": "api/v2/WifiApiV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CM_API_MVC.Dtos.Wifi.WifiDto, CM-API-MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiV2Controller",
+    "Method": "Create",
+    "RelativePath": "api/v2/WifiApiV",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "wifiDto",
+        "Type": "CM_API_MVC.Dtos.Wifi.NovoWifiDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Wifi.WifiDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiV2Controller",
+    "Method": "GetById",
+    "RelativePath": "api/v2/WifiApiV/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CM_API_MVC.Dtos.Wifi.WifiDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiV2Controller",
+    "Method": "Update",
+    "RelativePath": "api/v2/WifiApiV/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "wifiDto",
+        "Type": "CM_API_MVC.Dtos.Wifi.WifiDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v1.WifiApiV2Controller",
+    "Method": "Delete",
+    "RelativePath": "api/v2/WifiApiV/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

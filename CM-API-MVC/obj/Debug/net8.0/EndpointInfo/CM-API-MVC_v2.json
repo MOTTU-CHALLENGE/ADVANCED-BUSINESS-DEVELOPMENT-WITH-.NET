@@ -1,0 +1,2106 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CM API - Versão 2.0",
+    "version": "2.0"
+  },
+  "paths": {
+    "/api/v2/AuthApiV/login": {
+      "post": {
+        "tags": [
+          "AuthApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/AuthApiV": {
+      "get": {
+        "tags": [
+          "AuthApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/FilialApiV": {
+      "get": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaFilialDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaFilialDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaFilialDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/FilialApiV/paginado": {
+      "get": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "parameters": [
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "qtd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/FilialApiV/{id}": {
+      "get": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilialDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilialDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilialDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "FilialApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/IotApiV": {
+      "get": {
+        "tags": [
+          "IotApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IotDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IotDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IotDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "IotApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoIotDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoIotDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoIotDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotCadastradoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotCadastradoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotCadastradoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/IotApiV/{id}": {
+      "get": {
+        "tags": [
+          "IotApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotComPosicaoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotComPosicaoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IotComPosicaoDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "IotApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/MotoApiV": {
+      "get": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaMotoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaMotoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovaMotoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/MotoApiV/paginado": {
+      "get": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "parameters": [
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "qtd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/MotoApiV/{id}": {
+      "get": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MotoHatDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MotoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MotoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MotoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MotoApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/PatioApiV": {
+      "get": {
+        "tags": [
+          "PatioApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PatioComWifiDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PatioComWifiDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PatioComWifiDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PatioApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoPatioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoPatioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoPatioDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/PatioApiV/{id}": {
+      "get": {
+        "tags": [
+          "PatioApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PatioApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatioDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PatioApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/RegistroSinalApiV": {
+      "get": {
+        "tags": [
+          "RegistroSinalApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "RegistroSinalApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RegistroSinalApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/RegistroSinalApiV/paginado": {
+      "get": {
+        "tags": [
+          "RegistroSinalApiV"
+        ],
+        "parameters": [
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "qtd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/RegistroSinalApiV/{id}": {
+      "get": {
+        "tags": [
+          "RegistroSinalApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroIntensidadeSinal"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/WifiApiV": {
+      "get": {
+        "tags": [
+          "WifiApiV"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WifiDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WifiDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WifiDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WifiApiV"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoWifiDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoWifiDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoWifiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/WifiApiV/{id}": {
+      "get": {
+        "tags": [
+          "WifiApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WifiDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "WifiApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WifiDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WifiDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WifiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "WifiApiV"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FilialComPatioDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "patios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NomePatioDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FilialComPatioHatDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "patios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NomePatioDto"
+            },
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FilialDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IotCadastradoDto": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMoto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IotComPosicaoDto": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMoto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "posicoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PosicaoDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IotDto": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "motoDto": {
+            "$ref": "#/components/schemas/MotoDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LinkDto": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "type": "string",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "method": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MotoDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
+        "type": "object",
+        "properties": {
+          "idMoto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codTag": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMoto": {
+            "type": "string",
+            "nullable": true
+          },
+          "placa": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "anoFabricacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MotoHatDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
+        "type": "object",
+        "properties": {
+          "idMoto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codTag": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMoto": {
+            "type": "string",
+            "nullable": true
+          },
+          "placa": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "anoFabricacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NomePatioDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovaFilialDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
+        "type": "object",
+        "properties": {
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovaMotoDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
+        "type": "object",
+        "properties": {
+          "codTag": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMoto": {
+            "type": "string",
+            "nullable": true
+          },
+          "placa": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "anoFabricacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovoIotDto": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMoto": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovoPatioDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "area": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovoWifiDto": {
+        "required": [
+          "enderecoMac",
+          "localInstalacao",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "localInstalacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "enderecoMac": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatioComWifiDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "area": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "receptorWifi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WifiDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatioComWifiHatDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "area": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "receptorWifi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WifiDto"
+            },
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatioDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "area": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PosicaoDto": {
+        "type": "object",
+        "properties": {
+          "idPosicao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coordenadaX": {
+            "type": "number",
+            "format": "double"
+          },
+          "coordenadaY": {
+            "type": "number",
+            "format": "double"
+          },
+          "dataHoraRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "setor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistroDto": {
+        "required": [
+          "bssid"
+        ],
+        "type": "object",
+        "properties": {
+          "idIot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bssid": {
+            "type": "string",
+            "nullable": true
+          },
+          "rssi": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistroIntensidadeSinal": {
+        "required": [
+          "bssid"
+        ],
+        "type": "object",
+        "properties": {
+          "idRegistro": {
+            "type": "string",
+            "nullable": true
+          },
+          "idIot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bssid": {
+            "type": "string",
+            "nullable": true
+          },
+          "rssi": {
+            "type": "number",
+            "format": "double"
+          },
+          "dateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLogin": {
+        "required": [
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WifiDto": {
+        "required": [
+          "enderecoMac",
+          "localInstalacao",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "idLeitor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "localInstalacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "enderecoMac": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInstalacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "EX: 'Bearer {token}'",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

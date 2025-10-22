@@ -50,6 +50,30 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.MongoDb": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AspNetCore.HealthChecks.UI.Client": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -67,6 +91,34 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.5.0, )"
+            },
+            "OpenTelemetry": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Api": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Exporter.Console": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Exporter.Jaeger": {
+              "target": "Package",
+              "version": "[1.5.1, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.12.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

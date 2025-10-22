@@ -18,17 +18,17 @@ namespace CM_API_MVC.Models
         [Column("TP_MOTO")]
         [Required]
         [MaxLength(20)]
-        public string TipoMoto { get; set; }
+        public required string TipoMoto { get; set; }
 
         [Column("DS_PLACA")]
         [Required]
         [MaxLength(10)]
-        public string Placa { get; set; }
+        public required string Placa { get; set; }
 
         [Column("ST_STATUS")]
         [Required]
         [MaxLength(1)]
-        public string Status { get; set; }
+        public string Status { get; set; } = "I";
 
         [Column("DT_CADASTRO")]
         [Required]

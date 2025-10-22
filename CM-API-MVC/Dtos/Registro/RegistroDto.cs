@@ -4,7 +4,7 @@
     {
         public int IdIot { get; set; }
 
-        public string Bssid { get; set; }
+        public required string Bssid { get; set; }
 
         public double Rssi { get; set; }
     }
