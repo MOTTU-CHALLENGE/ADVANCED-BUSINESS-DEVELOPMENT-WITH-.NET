@@ -14,7 +14,7 @@ namespace CM_API_MVC.Models
         [Column("NM_DISPOSITIVO")]
         [Required]
         [MaxLength(50)]
-        public string Nome { get; set; }
+        public required string Nome { get; set; }
 
         [Column("DT_INSTALACAO")]
         [Required]

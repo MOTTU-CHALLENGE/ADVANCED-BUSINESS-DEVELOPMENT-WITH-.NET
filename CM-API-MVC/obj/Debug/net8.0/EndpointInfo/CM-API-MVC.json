@@ -1,11 +1,54 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CM-API-MVC",
+    "title": "CM API - Versão 1.0",
     "version": "1.0"
   },
   "paths": {
-    "/api/FilialApi": {
+    "/api/v1/AuthApi/login": {
+      "post": {
+        "tags": [
+          "AuthApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/AuthApi": {
+      "get": {
+        "tags": [
+          "AuthApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/FilialApi": {
       "get": {
         "tags": [
           "FilialApi"
@@ -71,17 +114,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               }
             }
@@ -89,7 +132,65 @@
         }
       }
     },
-    "/api/FilialApi/{id}": {
+    "/api/v1/FilialApi/paginado": {
+      "get": {
+        "tags": [
+          "FilialApi"
+        ],
+        "parameters": [
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "qtd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FilialComPatioDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/FilialApi/{id}": {
       "get": {
         "tags": [
           "FilialApi"
@@ -111,17 +212,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialComPatioDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialComPatioDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilialComPatioDto"
+                  "$ref": "#/components/schemas/FilialComPatioHatDto"
                 }
               }
             }
@@ -190,7 +291,7 @@
         }
       }
     },
-    "/api/IotApi": {
+    "/api/v1/IotApi": {
       "get": {
         "tags": [
           "IotApi"
@@ -274,7 +375,7 @@
         }
       }
     },
-    "/api/IotApi/{id}": {
+    "/api/v1/IotApi/{id}": {
       "get": {
         "tags": [
           "IotApi"
@@ -335,7 +436,7 @@
         }
       }
     },
-    "/api/MotoApi": {
+    "/api/v1/MotoApi": {
       "get": {
         "tags": [
           "MotoApi"
@@ -401,17 +502,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               }
             }
@@ -419,7 +520,65 @@
         }
       }
     },
-    "/api/MotoApi/{id}": {
+    "/api/v1/MotoApi/paginado": {
+      "get": {
+        "tags": [
+          "MotoApi"
+        ],
+        "parameters": [
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "qtd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MotoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/MotoApi/{id}": {
       "get": {
         "tags": [
           "MotoApi"
@@ -441,17 +600,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MotoDto"
+                  "$ref": "#/components/schemas/MotoHatDto"
                 }
               }
             }
@@ -520,7 +679,7 @@
         }
       }
     },
-    "/api/PatioApi": {
+    "/api/v1/PatioApi": {
       "get": {
         "tags": [
           "PatioApi"
@@ -586,17 +745,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               }
             }
@@ -604,7 +763,7 @@
         }
       }
     },
-    "/api/PatioApi/{id}": {
+    "/api/v1/PatioApi/{id}": {
       "get": {
         "tags": [
           "PatioApi"
@@ -626,17 +785,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioComWifiDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioComWifiDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatioComWifiDto"
+                  "$ref": "#/components/schemas/PatioComWifiHatDto"
                 }
               }
             }
@@ -705,10 +864,10 @@
         }
       }
     },
-    "/api/RegistroSinal": {
+    "/api/v1/RegistroSinalApi": {
       "get": {
         "tags": [
-          "RegistroSinal"
+          "RegistroSinalApi"
         ],
         "responses": {
           "200": {
@@ -744,7 +903,7 @@
       },
       "post": {
         "tags": [
-          "RegistroSinal"
+          "RegistroSinalApi"
         ],
         "requestBody": {
           "content": {
@@ -790,7 +949,7 @@
       },
       "delete": {
         "tags": [
-          "RegistroSinal"
+          "RegistroSinalApi"
         ],
         "parameters": [
           {
@@ -808,10 +967,10 @@
         }
       }
     },
-    "/api/RegistroSinal/paginado": {
+    "/api/v1/RegistroSinalApi/paginado": {
       "get": {
         "tags": [
-          "RegistroSinal"
+          "RegistroSinalApi"
         ],
         "parameters": [
           {
@@ -824,7 +983,7 @@
             }
           },
           {
-            "name": "qtdRegistros",
+            "name": "qtd",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -866,12 +1025,11 @@
         }
       }
     },
-    "/api/RegistroSinal/{id}": {
+    "/api/v1/RegistroSinalApi/{id}": {
       "get": {
         "tags": [
-          "RegistroSinal"
+          "RegistroSinalApi"
         ],
-        "operationId": "Registro",
         "parameters": [
           {
             "name": "id",
@@ -906,7 +1064,7 @@
         }
       }
     },
-    "/api/WifiApi": {
+    "/api/v1/WifiApi": {
       "get": {
         "tags": [
           "WifiApi"
@@ -990,7 +1148,7 @@
         }
       }
     },
-    "/api/WifiApi/{id}": {
+    "/api/v1/WifiApi/{id}": {
       "get": {
         "tags": [
           "WifiApi"
@@ -1095,6 +1253,13 @@
   "components": {
     "schemas": {
       "FilialComPatioDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
         "type": "object",
         "properties": {
           "idFilial": {
@@ -1144,7 +1309,78 @@
         },
         "additionalProperties": false
       },
+      "FilialComPatioHatDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeFilial": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "cidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInauguracao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "patios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NomePatioDto"
+            },
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FilialDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
         "type": "object",
         "properties": {
           "idFilial": {
@@ -1188,6 +1424,9 @@
         "additionalProperties": false
       },
       "IotCadastradoDto": {
+        "required": [
+          "nome"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1215,6 +1454,9 @@
         "additionalProperties": false
       },
       "IotComPosicaoDto": {
+        "required": [
+          "nome"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1249,6 +1491,9 @@
         "additionalProperties": false
       },
       "IotDto": {
+        "required": [
+          "nome"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1273,7 +1518,30 @@
         },
         "additionalProperties": false
       },
+      "LinkDto": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "type": "string",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "method": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "MotoDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
         "type": "object",
         "properties": {
           "idMoto": {
@@ -1312,6 +1580,57 @@
         },
         "additionalProperties": false
       },
+      "MotoHatDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
+        "type": "object",
+        "properties": {
+          "idMoto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codTag": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMoto": {
+            "type": "string",
+            "nullable": true
+          },
+          "placa": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "anoFabricacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "NomePatioDto": {
         "required": [
           "nomePatio"
@@ -1330,6 +1649,13 @@
         "additionalProperties": false
       },
       "NovaFilialDto": {
+        "required": [
+          "cidade",
+          "endereco",
+          "estado",
+          "nomeFilial",
+          "pais"
+        ],
         "type": "object",
         "properties": {
           "nomeFilial": {
@@ -1369,6 +1695,11 @@
         "additionalProperties": false
       },
       "NovaMotoDto": {
+        "required": [
+          "placa",
+          "status",
+          "tipoMoto"
+        ],
         "type": "object",
         "properties": {
           "codTag": {
@@ -1404,6 +1735,9 @@
         "additionalProperties": false
       },
       "NovoIotDto": {
+        "required": [
+          "nome"
+        ],
         "type": "object",
         "properties": {
           "nome": {
@@ -1457,6 +1791,11 @@
         "additionalProperties": false
       },
       "NovoWifiDto": {
+        "required": [
+          "enderecoMac",
+          "localInstalacao",
+          "status"
+        ],
         "type": "object",
         "properties": {
           "idPatio": {
@@ -1522,6 +1861,55 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/WifiDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatioComWifiHatDto": {
+        "required": [
+          "nomePatio"
+        ],
+        "type": "object",
+        "properties": {
+          "idPatio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idFilial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidadeMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "area": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "receptorWifi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WifiDto"
+            },
+            "nullable": true
+          },
+          "_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
             },
             "nullable": true
           }
@@ -1594,6 +1982,9 @@
         "additionalProperties": false
       },
       "RegistroDto": {
+        "required": [
+          "bssid"
+        ],
         "type": "object",
         "properties": {
           "idIot": {
@@ -1612,6 +2003,9 @@
         "additionalProperties": false
       },
       "RegistroIntensidadeSinal": {
+        "required": [
+          "bssid"
+        ],
         "type": "object",
         "properties": {
           "idRegistro": {
@@ -1637,7 +2031,30 @@
         },
         "additionalProperties": false
       },
+      "UserLogin": {
+        "required": [
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "WifiDto": {
+        "required": [
+          "enderecoMac",
+          "localInstalacao",
+          "status"
+        ],
         "type": "object",
         "properties": {
           "idLeitor": {
@@ -1671,6 +2088,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "EX: 'Bearer {token}'",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

@@ -9,17 +9,17 @@ namespace CM_API_MVC.Models
         [Key]
         [Column("CD_TAG")]
         [MaxLength(50)]
-        public string CodigoTag { get; set; }
+        public required string CodigoTag { get; set; }
 
         [Column("VL_FREQUENCIA")]
         [Required]
         [MaxLength(20)]
-        public string Frequencia { get; set; }
+        public required string Frequencia { get; set; }
 
         [Column("ST_STATUS")]
         [Required]
         [MaxLength(1)]
-        public string Status { get; set; }
+        public required string Status { get; set; }
 
         [Column("DT_ATIVACAO")]
         public DateTime? DataAtivacao { get; set; }

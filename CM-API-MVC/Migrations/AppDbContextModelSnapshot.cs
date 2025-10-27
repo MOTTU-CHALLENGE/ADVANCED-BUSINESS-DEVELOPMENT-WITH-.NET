@@ -3,8 +3,8 @@ using System;
 using CM_API_MVC.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -17,36 +17,36 @@ namespace CM_API_MVC.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("CM_API_MVC.Models.DispositivoIot", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_DISPOSITIVO");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DataInstalacao")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_INSTALACAO");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("DS_OBS");
 
                     b.Property<int?>("IdMoto")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_MOTO");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("NM_DISPOSITIVO");
 
                     b.HasKey("Id");
@@ -61,53 +61,53 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<int>("IdFilial")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_FILIAL");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdFilial"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdFilial"));
 
                     b.Property<string>("Cep")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("character varying(20)")
                         .HasColumnName("CD_CEP");
 
                     b.Property<string>("Cidade")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("DS_CIDADE");
 
                     b.Property<DateTime?>("DataInauguracao")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_INAUGURACAO");
 
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("character varying(255)")
                         .HasColumnName("DS_ENDERECO");
 
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("DS_ESTADO");
 
                     b.Property<string>("NomeFilial")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("NM_FILIAL");
 
                     b.Property<string>("Pais")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("DS_PAIS");
 
                     b.Property<string>("Telefone")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("character varying(20)")
                         .HasColumnName("DS_TELEFONE");
 
                     b.HasKey("IdFilial");
@@ -119,45 +119,45 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<int>("IdMoto")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_MOTO");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdMoto"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdMoto"));
 
                     b.Property<int?>("AnoFabricacao")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("NR_ANO_FABRICACAO");
 
                     b.Property<string>("CodTag")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("CD_TAG");
 
                     b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_CADASTRO");
 
                     b.Property<string>("Modelo")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("DS_MODELO");
 
                     b.Property<string>("Placa")
                         .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("varchar(10)")
+                        .HasColumnType("character varying(10)")
                         .HasColumnName("DS_PLACA");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)")
+                        .HasColumnType("character varying(1)")
                         .HasColumnName("ST_STATUS");
 
                     b.Property<string>("TipoMoto")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("character varying(20)")
                         .HasColumnName("TP_MOTO");
 
                     b.HasKey("IdMoto");
@@ -172,31 +172,31 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<int>("IdPatio")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_PATIO");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdPatio"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdPatio"));
 
                     b.Property<decimal?>("Area")
                         .HasColumnType("decimal(6,2)")
                         .HasColumnName("VL_AREA_PATIO");
 
                     b.Property<int?>("CapacidadeMax")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("NR_CAP_MAX");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("DS_OBS");
 
                     b.Property<int>("IdFilial")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_FILIAL");
 
                     b.Property<string>("NomePatio")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("NM_PATIO");
 
                     b.HasKey("IdPatio");
@@ -210,34 +210,34 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<int>("IdPosicao")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_POSICAO");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdPosicao"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdPosicao"));
 
                     b.Property<double>("CoordenadaX")
-                        .HasColumnType("double")
+                        .HasColumnType("double precision")
                         .HasColumnName("COORD_X");
 
                     b.Property<double>("CoordenadaY")
-                        .HasColumnType("double")
+                        .HasColumnType("double precision")
                         .HasColumnName("COORD_Y");
 
                     b.Property<DateTime>("DataHoraRegistro")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_REGISTRO");
 
                     b.Property<int>("IdDispositivo")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_DISPOSITIVO");
 
                     b.Property<int>("IdPatio")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_PATIO");
 
                     b.Property<string>("Setor")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("DS_SETOR");
 
                     b.HasKey("IdPosicao");
@@ -253,39 +253,39 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<int>("IdLeitor")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_LEITOR");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdLeitor"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdLeitor"));
 
                     b.Property<DateTime>("DataInstalacao")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_INSTALACAO");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("DS_OBS");
 
                     b.Property<string>("EnderecoMac")
                         .IsRequired()
                         .HasMaxLength(17)
-                        .HasColumnType("varchar(17)")
+                        .HasColumnType("character varying(17)")
                         .HasColumnName("DS_ENDERECO_MAC");
 
                     b.Property<int>("IdPatio")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("ID_PATIO");
 
                     b.Property<string>("LocalInstalacao")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("DS_LOCAL_INSTALACAO");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)")
+                        .HasColumnType("character varying(1)")
                         .HasColumnName("ST_STATUS");
 
                     b.HasKey("IdLeitor");
@@ -299,30 +299,30 @@ namespace CM_API_MVC.Migrations
                 {
                     b.Property<string>("CodigoTag")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("character varying(50)")
                         .HasColumnName("CD_TAG");
 
                     b.Property<int?>("CodTag")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("DataAtivacao")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("DT_ATIVACAO");
 
                     b.Property<string>("Frequencia")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("character varying(20)")
                         .HasColumnName("VL_FREQUENCIA");
 
                     b.Property<string>("Observacao")
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("DS_OBS");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)")
+                        .HasColumnType("character varying(1)")
                         .HasColumnName("ST_STATUS");
 
                     b.HasKey("CodigoTag");

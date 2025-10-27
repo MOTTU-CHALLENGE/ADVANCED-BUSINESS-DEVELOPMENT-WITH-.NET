@@ -1,4 +1,4 @@
-﻿namespace CM_API_MVC.Dtos
+﻿namespace CM_API_MVC.Dtos.Posicao
 {
     public class PosicaoDto
     {

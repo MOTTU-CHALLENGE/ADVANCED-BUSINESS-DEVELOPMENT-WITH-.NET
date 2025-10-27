@@ -18,17 +18,17 @@ namespace CM_API_MVC.Models
         [Column("DS_LOCAL_INSTALACAO")]
         [Required]
         [MaxLength(100)]
-        public string LocalInstalacao { get; set; }
+        public required string LocalInstalacao { get; set; }
 
         [Column("DS_ENDERECO_MAC")]
         [Required]
         [MaxLength(17)]
-        public string EnderecoMac { get; set; }
+        public required string EnderecoMac { get; set; }
 
         [Column("ST_STATUS")]
         [Required]
         [StringLength(1)]
-        public string Status { get; set; }
+        public string Status { get; set; } = "I";
 
         [Column("DT_INSTALACAO")]
         [Required]

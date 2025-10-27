@@ -14,27 +14,27 @@ namespace CM_API_MVC.Models
         [Column("NM_FILIAL")]
         [Required]
         [MaxLength(100)]
-        public string NomeFilial { get; set; }
+        public required string NomeFilial { get; set; }
 
         [Column("DS_ENDERECO")]
         [Required]
         [MaxLength(255)]
-        public string Endereco { get; set; }
+        public required string Endereco { get; set; }
 
         [Column("DS_CIDADE")]
         [Required]
         [MaxLength(100)]
-        public string Cidade { get; set; }
+        public required string Cidade { get; set; }
 
         [Column("DS_ESTADO")]
         [Required]
         [MaxLength(50)]
-        public string Estado { get; set; }
+        public required string Estado { get; set; }
 
         [Column("DS_PAIS")]
         [Required]
         [MaxLength(50)]
-        public string Pais { get; set; }
+        public required string Pais { get; set; }
 
         [Column("CD_CEP")]
         [MaxLength(20)]

@@ -2,8 +2,8 @@
 {
     public class AtualizarRfidDto
     {
-        public string CodigoTag { get; set; }
-        public string Status { get; set; }
+        public required string CodigoTag { get; set; }
+        public required string Status { get; set; }
         public string? Observacao { get; set; }
     }
 }
