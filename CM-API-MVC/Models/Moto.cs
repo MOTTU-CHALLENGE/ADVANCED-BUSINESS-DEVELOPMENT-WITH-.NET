@@ -41,7 +41,6 @@ namespace CM_API_MVC.Models
         [MaxLength(50)]
         public string? Modelo { get; set; }
 
-        [ForeignKey("CodTag")]
         public Rfid? Rfid { get; set; }
 
     }

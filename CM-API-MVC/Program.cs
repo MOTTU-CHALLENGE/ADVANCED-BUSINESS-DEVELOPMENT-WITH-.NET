@@ -9,9 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -27,9 +25,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 
 //Parte para testar com o banco de dados local
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
-    new MySqlServerVersion(new Version(8, 0, 36))));
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
+//    new MySqlServerVersion(new Version(8, 0, 36))));
 
 //builder.Services.AddDbContext<AppDbContext>(options =>
 //    options.UseMySql(
@@ -37,9 +35,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //        new MySqlServerVersion(new Version(8, 0, 36))
 //    ));
 
-
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//   options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
 
 
 
@@ -55,7 +52,6 @@ builder.Services.AddScoped<MotoLinksHelper>();
 
 
 // Parte para testar com o banco de dados local
-builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("ConnectionStrings"));
 
 //builder.Services.AddSingleton<IMongoClient>(sp =>
 //{
@@ -70,12 +66,26 @@ builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("Co
 //    return new MongoClient(connectionString);
 //});
 
+//builder.Services.AddSingleton(sp =>
+//{
+//    var client = sp.GetRequiredService<IMongoClient>();
+//    return client.GetDatabase("mottuDB");
+//});
+
+
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("MongoConnection");
+    return new MongoClient(connectionString);
+});
 
 builder.Services.AddSingleton(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
     return client.GetDatabase("mottuDB");
 });
+
 
 
 builder.Services.AddSingleton<RegistroSinalRepository>();
@@ -192,7 +202,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    //db.Database.Migrate();
+    db.Database.Migrate();
 }
 
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();

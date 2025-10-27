@@ -1,5 +1,4 @@
 ﻿using CM_API_MVC.Contexts;
-using CM_API_MVC.Dtos;
 using CM_API_MVC.Dtos.Iot;
 using CM_API_MVC.Dtos.Moto;
 using CM_API_MVC.Dtos.Posicao;

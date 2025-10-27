@@ -1,19 +1,19 @@
 version: "3.9"
 
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql-dev
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mottuDB
-      MYSQL_USER: mottuser
-      MYSQL_PASSWORD: mottupass
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    restart: unless-stopped
+  # mysql:
+  #   image: mysql:8.0
+  #   container_name: mysql-dev
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: mottuDB
+  #     MYSQL_USER: mottuser
+  #     MYSQL_PASSWORD: mottupass
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   restart: unless-stopped
 
   mongo:
     image: mongo:7
@@ -28,26 +28,40 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: adminpass
       MONGO_INITDB_DATABASE: mottuDB
 
-  api:
-    build: ./publicado
-    container_name: CM-API-MVC
+  # docker pull postgres:15.14-alpine3.21
+  postgres:
+    image: postgres:15.14-alpine3.21
+    container_name: postgres-dev
     ports:
-      - "8080:8080"
-    depends_on:
-      - mongo
-      - mysql
-    volumes:
-      - ./publicado:/app
-    restart: unless-stopped
+      - "5432:5432"
     environment:
-      MYSQL_CONNECTION: server=mysql;port=3306;database=mottuDB;user=mottuser;password=mottupass
-      MONGODB_URI: mongodb://mottuser:mottupass@mongo:27017/mottuDB
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      POSTGRES_DB: mottuDB
+      POSTGRES_USER: mottuser
+      POSTGRES_PASSWORD: mottupass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+  # api:
+  #   build: ./publicado
+  #   container_name: CM-API-MVC
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - mongo
+  #     - mysql
+  #   volumes:
+  #     - ./publicado:/app
+  #   restart: unless-stopped
+  #   environment:
+  #     MYSQL_CONNECTION: server=mysql;port=3306;database=mottuDB;user=mottuser;password=mottupass
+  #     MONGODB_URI: mongodb://mottuser:mottupass@mongo:27017/mottuDB
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
 
 volumes:
-  mysql_data:
+  postgres_data:
+  # mysql_data:
   mongo_data:

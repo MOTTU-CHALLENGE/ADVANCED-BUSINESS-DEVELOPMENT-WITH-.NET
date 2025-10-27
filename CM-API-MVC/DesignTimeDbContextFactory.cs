@@ -17,8 +17,8 @@ namespace CM_API_MVC
 
             var builder = new DbContextOptionsBuilder<AppDbContext>();
 
-            var connectionString = configuration.GetConnectionString("MySqlConnection");
-            builder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36)));
+            var connectionString = configuration.GetConnectionString("PostgresConnection");
+            builder.UseNpgsql(connectionString);
 
             return new AppDbContext(builder.Options);
         }
