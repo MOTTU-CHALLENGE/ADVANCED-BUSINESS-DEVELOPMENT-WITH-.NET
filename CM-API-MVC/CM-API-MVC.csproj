@@ -9,13 +9,9 @@
 
   <ItemGroup>
     <Compile Remove="Dtos\NovaPasta1\**" />
-    <Compile Remove="Dtos\NovaPasta\**" />
     <Content Remove="Dtos\NovaPasta1\**" />
-    <Content Remove="Dtos\NovaPasta\**" />
     <EmbeddedResource Remove="Dtos\NovaPasta1\**" />
-    <EmbeddedResource Remove="Dtos\NovaPasta\**" />
     <None Remove="Dtos\NovaPasta1\**" />
-    <None Remove="Dtos\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +32,7 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.1" />
+		<PackageReference Include="Microsoft.ML" Version="4.0.3" />
 		<PackageReference Include="MongoDB.Driver" Version="3.5.0" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
 		<PackageReference Include="OpenTelemetry" Version="1.13.1" />
@@ -48,10 +45,17 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
 
-
 	<ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+		<None Update="Data\T_DF_WIFI_RANGE.csv">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Data\modelo-posicao.zip">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
 
 </Project>
 

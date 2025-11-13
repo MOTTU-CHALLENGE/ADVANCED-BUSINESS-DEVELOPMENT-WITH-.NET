@@ -1,0 +1,12 @@
+|            NOME             |   RM   |
+| :-------------------------: | :----: |
+|  Francesco M Di Benedetto   | 557313 |
+| Luiz Felipe Campos da Silva | 555591 |
+|   Samuel Patrick Yariwake   | 556461 |
+
+
+    - Repositório no azurerepo
+
+https://dev.azure.com/RM557313/Projetos/_git/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET
+
+https://www.youtube.com/watch?v=x_9JstYHxVY

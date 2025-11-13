@@ -81,5 +81,21 @@ namespace CM_API_MVC.Repositories
             return wifi;
         }
 
+        public async Task<WifiDto?> GetByMacAsyncDto(string mac)
+        {
+            return await _context.ReceptoresWifi
+                .Where(w => w.EnderecoMac == mac)
+                .Select(w => new WifiDto
+                {
+                    IdLeitor = w.IdLeitor,
+                    IdPatio = w.IdPatio,
+                    LocalInstalacao = w.LocalInstalacao,
+                    EnderecoMac = w.EnderecoMac,
+                    DataInstalacao = w.DataInstalacao,
+                    Descricao = w.Descricao,
+                    Status = w.Status
+                }).FirstOrDefaultAsync();
+        }
+
     }
 }

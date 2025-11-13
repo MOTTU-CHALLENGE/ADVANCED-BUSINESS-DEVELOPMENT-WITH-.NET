@@ -3,6 +3,7 @@ using CM_API_MVC.Dtos.Filial;
 using CM_API_MVC.Dtos.Moto;
 using CM_API_MVC.Dtos.Patio;
 using CM_API_MVC.Repositories;
+using CM_API_MVC.Services;
 using CM_API_MVC.Settings;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,21 +25,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 
-//Parte para testar com o banco de dados local
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
-//    new MySqlServerVersion(new Version(8, 0, 36))));
-
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseMySql(
-//        Environment.GetEnvironmentVariable("MYSQL_CONNECTION") ?? builder.Configuration.GetConnectionString("MYSQL_CONNECTION"),
-//        new MySqlServerVersion(new Version(8, 0, 36))
-//    ));
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
-
-
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<PatioRepository>();
@@ -49,29 +37,6 @@ builder.Services.AddScoped<IotRepository>();
 builder.Services.AddScoped<FilialLinksHelper>();
 builder.Services.AddScoped<PatioLinksHelper>();
 builder.Services.AddScoped<MotoLinksHelper>();
-
-
-// Parte para testar com o banco de dados local
-
-//builder.Services.AddSingleton<IMongoClient>(sp =>
-//{
-//    var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI")
-//                           ?? builder.Configuration.GetConnectionString("MONGODB_URI");
-
-//    if (string.IsNullOrEmpty(connectionString))
-//    {
-//        throw new InvalidOperationException("MongoDB connection string is not configured.");
-//    }
-
-//    return new MongoClient(connectionString);
-//});
-
-//builder.Services.AddSingleton(sp =>
-//{
-//    var client = sp.GetRequiredService<IMongoClient>();
-//    return client.GetDatabase("mottuDB");
-//});
-
 
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
@@ -86,15 +51,15 @@ builder.Services.AddSingleton(sp =>
     return client.GetDatabase("mottuDB");
 });
 
-
-
 builder.Services.AddSingleton<RegistroSinalRepository>();
+builder.Services.AddSingleton<PreditorPosicaoService>();
+
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy => policy
-            .WithOrigins("http://localhost:3000")
+            .AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod()
     );
@@ -222,7 +187,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseCors("AllowFrontend");
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 

@@ -8,7 +8,7 @@
     "pais": "Brazil",
     "cep": null,
     "telefone": "+55 62 9 6897 6444",
-    "dataInauguracao": "2025-09-28T21:35:38.172Z"
+    "dataInauguracao": null
   },
   {
     "nomeFilial": "Aparecida Paulista",
@@ -18,7 +18,7 @@
     "pais": "Brazil",
     "cep": null,
     "telefone": "+55 (81) 94053 6810",
-    "dataInauguracao": "2025-09-28T21:35:38.172Z"
+    "dataInauguracao": null
   },
   {
     "nomeFilial": "Barros",
@@ -28,7 +28,7 @@
     "pais": "Brazil",
     "cep": null,
     "telefone": "+55 (11) 93442 1826",
-    "dataInauguracao": "2025-09-28T21:35:38.172Z"
+    "dataInauguracao": null
   }
 ]
 

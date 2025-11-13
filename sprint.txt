@@ -5,6 +5,6 @@
 |   Samuel Patrick Yariwake   | 556461 |
 
 
-    - Repositório no github
+    - Repositório no azurerepo
 
-https://github.com/MOTTU-CHALLENGE/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET
+https://dev.azure.com/RM557313/Projetos/_git/ADVANCED-BUSINESS-DEVELOPMENT-WITH-.NET

@@ -40,8 +40,5 @@ namespace CM_API_MVC.Models
 
         [ForeignKey("IdPatio")]
         public required Patio Patio { get; set; }
-
-
-
     }
 }

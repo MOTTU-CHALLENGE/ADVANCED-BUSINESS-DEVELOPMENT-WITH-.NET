@@ -57,5 +57,17 @@ namespace CM_API_MVC.Repositories
         {
             return await _collection.CountDocumentsAsync(_ => true);
         }
+
+        public async Task<RegistroIntensidadeSinal?> ObterUltimoPorDispositivo(int idDispositivo)
+        {
+            var registros = await _collection
+                .Find(r => r.IdIot == idDispositivo)
+                .ToListAsync(); 
+
+            return registros
+                .OrderByDescending(r => r.DateTime)
+                .FirstOrDefault();
+        }
+
     }
 }

@@ -50,7 +50,7 @@ namespace CM_API_MVC.Controllers.Api.v1
                 return BadRequest(ModelState);
 
             var novoRegistro = await _repository.AddAsync(registro);
-            return CreatedAtRoute("Registro", new { id = novoRegistro.IdRegistro }, novoRegistro);
+            return Ok(novoRegistro);
         }
 
         [HttpDelete]

@@ -1234,6 +1234,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v2.PosicaoApiV2Controller",
+    "Method": "PreverPosicao",
+    "RelativePath": "api/v2/PosicaoApiV/prever",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdDispositivo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CM_API_MVC.Controllers.Api.v2.PosicaoApiV2Controller",
+    "Method": "TreinarModelo",
+    "RelativePath": "api/v2/PosicaoApiV/treinar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CM_API_MVC.Controllers.Api.v1.RegistroSinalApiV2Controller",
     "Method": "GetAll",
     "RelativePath": "api/v2/RegistroSinalApiV",
